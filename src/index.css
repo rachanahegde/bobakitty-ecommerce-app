@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&display=swap');
+@import "tailwindcss";
+
+
+/* Customise tailwind theme */
+@theme {
+  /* Add custom fonts */
+  --font-pacifico: 'Pacifico', 'sans-serif';
+  --font-fredoka: 'Fredoka', 'sans-serif';
+  --font-montserrat: 'Montserrat', 'sans-serif';
+
+  /* Add custom colors */
+  --color-light-purple: #EDECFF;
+  --color-medium-purple: #BFBBFF;
+  --color-dark-purple: #191832;
+  --color-light-pink: #FFBBD5;
+  --color-medium-pink: #FF79AC;
+} 
+
+
