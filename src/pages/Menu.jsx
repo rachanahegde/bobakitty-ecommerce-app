@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ExpandedDrinkModal from "../components/ExpandedDrinkModal";
 
 // Import fruit tea
 import drink1 from "../assets/images/tea/fruit_tea/lychee_fruit_tea.jpeg";
@@ -219,25 +220,58 @@ const Menu = () => {
         From classic milk teas to fruity refreshers, explore our handcrafted
         drinks made with the finest ingredients!
       </p>
-      {/* Drinks navigation */}
-      {/* TODO clicking on the drink categoy will filter + display those drinks */}
-      {/* TODO the drink category that you are viewing is a different color from the other categories */}
-      <div className="w-6xl mt-10 pb-6 pt-6 mx-auto bg-white/25 backdrop-blur-lg shadow-lg flex flex-row justify-center gap-x-30 rounded-xl">
-        <p className="text-xl font-montserrat font-bold text-medium-pink">
-          Milk Teas
-        </p>
-        <p className="text-xl font-montserrat font-bold text-medium-pink">
-          Fruit Teas
-        </p>
-        <p className="text-xl font-montserrat font-bold text-medium-pink">
-          Matcha & Specialty
-        </p>
-        <p className="text-xl font-montserrat font-bold text-medium-pink">
-          Ice Blend
-        </p>
+
+      {/* Drinks Category Filter */}
+      <div className="w-6xl mt-10 pb-6 pt-6 mx-auto bg-white/25 backdrop-blur-lg shadow-lg flex flex-row justify-center gap-x-12 rounded-xl">
+        {Object.keys(allDrinks).map((category) => (
+          <p
+            key={category}
+            className={`text-xl font-montserrat font-bold cursor-pointer px-4 py-2 rounded-lg transition-all ${
+              selectedCategory === category
+                ? "bg-light-pink text-dark-purple shadow-md"
+                : "text-medium-pink hover:text-dark-purple"
+            }`}
+            onClick={() => setSelectedCategory(category)}
+          >
+            {category}
+          </p>
+        ))}
       </div>
 
-      {/* TODO Display drinks based on category selected */}
+      {/* Drinks Images and Names Grid */}
+      <div className="mt-12 grid grid-cols-3 gap-12 w-full max-w-4xl mx-auto">
+        {allDrinks[selectedCategory].length > 0 ? (
+          allDrinks[selectedCategory].map((drink) => (
+            <div
+              key={drink.id}
+              className="flex flex-col items-center bg-white/30 backdrop-blur-lg shadow-lg p-4 rounded-xl cursor-pointer"
+              onClick={() => setExpandedDrink(drink)}
+            >
+              <img
+                src={drink.image}
+                alt={drink.name}
+                className="w-45 h-45 rounded-lg object-cover shadow-md"
+              />
+              <p className="mt-6 mb-2 text-lg font-montserrat font-semibold text-light-purple">
+                {drink.name}
+              </p>
+            </div>
+          ))
+        ) : (
+          <p className="text-medium-pink text-lg font-montserrat col-span-3">
+            No drinks available in this category.
+          </p>
+        )}
+      </div>
+
+      {/* Expanded drink modal */}
+      {/* Clicking on a drink allows user to view the name, image, and description */}
+      {expandedDrink && (
+        <ExpandedDrinkModal
+          drink={expandedDrink}
+          onClose={() => setExpandedDrink(null)}
+        />
+      )}
     </div>
   );
 };
