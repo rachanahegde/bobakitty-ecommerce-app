@@ -64,7 +64,7 @@ const Home = () => {
 
       {/* Image Grid */}
       <div className="mt-10 max-w-3xl p-6 mx-auto rounded-2xl bg-white/25 backdrop-blur-lg shadow-xl border border-white/20">
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-3 gap-6">
           <img
             src={person_drinking_boba_1}
             alt="Person drinking boba"
@@ -106,7 +106,6 @@ const Home = () => {
         </Link>
       </div>
 
-      {/* TODO Add touch/swipe functionality for mobile? */}
       {/* Featured Drinks */}
       <h1 className="text-2xl font-fredoka font-bold text-light-pink mt-8">
         Featured Drinks
@@ -114,7 +113,7 @@ const Home = () => {
 
       <div className="mt-6">
         {/* Drink Cards with Left/Right Navigation */}
-        <div className="relative w-full max-w-2xl mx-auto flex items-center">
+        <div className="relative w-full max-w-3xl mx-auto flex items-center">
           {/* Left Arrow Button */}
           <button onClick={handlePrev} className="absolute left-[-50px] w-10">
             <img src={left_arrow} />
@@ -125,12 +124,12 @@ const Home = () => {
             {drinks.slice(currentIndex, currentIndex + 3).map((drink) => (
               <div
                 key={drink.id}
-                className="flex flex-col items-center bg-white/30 backdrop-blur-lg shadow-lg pt-4 pr-2 pl-2 rounded-xl"
+                className="flex flex-col items-center bg-white/30 backdrop-blur-lg shadow-lg pt-6 pr-2 pl-2 rounded-xl"
               >
                 <img
                   src={drink.image}
                   alt={drink.name}
-                  className="w-40 h-40 rounded-lg object-cover shadow-md"
+                  className="w-45 h-45 rounded-lg object-cover shadow-md"
                 />
                 <p className="mt-4 mb-2 text-sm font-montserrat font-semibold text-light-purple">
                   {drink.name}
@@ -159,7 +158,7 @@ const Home = () => {
       {/* About section */}
       <div className="mt-12 text-2xl font-fredoka font-bold text-light-pink pb-10">
         <h2 className="">About Bobakitty Café</h2>
-        <div className="mt-6 w-2xl mx-auto items-center bg-white/25 backdrop-blur-lg shadow-lg pt-8 pr-6 pl-6 pb-6 rounded-xl">
+        <div className="mt-6 w-3xl mx-auto items-center bg-white/25 backdrop-blur-lg shadow-lg pt-8 pr-6 pl-6 pb-6 rounded-xl">
           <p className="text-sm font-montserrat text-light-purple leading-6">
             Welcome to BobaKitty Café - where bubble tea meets whiskers and
             warmth! Sip on handcrafted boba, cuddle with our friendly rescue
@@ -173,7 +172,7 @@ const Home = () => {
           </p>
           <img
             src={cartoon_boba_kitty}
-            className="absolute bottom-20 left-152 w-50"
+            className="absolute bottom-27 left-173 w-50"
             alt="Cat drinking bubble tea"
           />
         </div>
