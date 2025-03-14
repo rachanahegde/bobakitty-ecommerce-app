@@ -2,10 +2,8 @@ import { useState, useEffect } from "react";
 import productsData from "../data/products.json"; // Import JSON data
 import ShoppingCart from "../components/ShoppingCart"; // Import the ShoppingCart component
 
-const Shop = ({ cart, setCart, setIsCartOpen }) => {
+const Shop = ({ cart, setCart, isCartOpen, setIsCartOpen }) => {
   const [products, setProducts] = useState([]);
-  const [cart, setCart] = useState([]);
-  const [isCartOpen, setIsCartOpen] = useState(false);
 
   useEffect(() => {
     setProducts(productsData); // Load products from JSON
