@@ -1,18 +1,43 @@
 import { useState, useEffect } from "react";
 import productsData from "../data/products.json"; // Import JSON data
+import ShoppingCart from "../components/ShoppingCart"; // Import the ShoppingCart component
 
-// TODO d.	Clicking "Add to Cart" updates the shopping cart dynamically
-
-const Shop = () => {
+const Shop = ({ cart, setCart, setIsCartOpen }) => {
   const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   useEffect(() => {
     setProducts(productsData); // Load products from JSON
   }, []);
 
+  // Function to add a product to the cart
+  const addToCart = (product) => {
+    setCart((prevCart) => {
+      const existingItem = prevCart.find((item) => item.id === product.id);
+      if (existingItem) {
+        return prevCart.map((item) =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      } else {
+        return [...prevCart, { ...product, quantity: 1 }];
+      }
+    });
+  };
+
   return (
     <div className="mt-6 text-center">
       <h1 className="text-3xl font-fredoka font-bold text-light-pink">Shop</h1>
+
+      {/* Shopping Cart Component (Controlled by Navbar's Click) */}
+      <ShoppingCart
+        cart={cart}
+        setCart={setCart}
+        isCartOpen={isCartOpen}
+        setIsCartOpen={setIsCartOpen}
+      />
 
       {/* Product Grid */}
       <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-y-12 px-6 md:px-12 lg:px-24 mb-16 max-w-6xl mx-auto gap-x-10">
@@ -44,7 +69,10 @@ const Shop = () => {
             </p>
 
             {/* Add to Cart Button */}
-            <button className="mt-4 px-6 py-2 bg-light-pink text-white font-bold rounded-full shadow-md hover:scale-105 transition-transform">
+            <button
+              onClick={() => addToCart(product)}
+              className="mt-4 px-6 py-2 bg-light-pink text-white font-bold rounded-full shadow-md hover:scale-105 transition-transform"
+            >
               Add to Cart
             </button>
           </div>
