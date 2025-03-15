@@ -43,36 +43,39 @@ const ShoppingCart = ({ cart, setCart, isCartOpen, setIsCartOpen }) => {
       {/* Shopping Cart Overlay */}
       {isCartOpen && (
         <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
-          <div className="bg-white w-[400px] p-6 rounded-lg shadow-xl relative">
-            {/* Close Button */}
-            <button
-              className="absolute top-4 right-4 text-dark-purple font-bold text-lg"
-              onClick={() => setIsCartOpen(false)}
-            >
-              ✖
-            </button>
+          <div className="bg-white w-[440px] p-6 rounded-lg shadow-xl relative">
+            {/* Cart Header Section */}
+            <div className="bg-light-pink absolute top-0 left-0 w-full px-6 py-8 rounded-t-lg">
+              {/* Close Button */}
+              <button
+                className="absolute top-6 right-8 text-white text-lg font-bold"
+                onClick={() => setIsCartOpen(false)}
+              >
+                ✖
+              </button>
 
-            {/* Cart Header */}
-            <h2 className="text-xl font-bold text-medium-pink mb-4">
-              Cart ({totalItems} {totalItems === 1 ? "item" : "items"})
-            </h2>
+              {/* Cart Header */}
+              <h2 className="text-md font-montserrat font-bold text-white uppercase text-center">
+                {totalItems} {totalItems === 1 ? "item" : "items"}
+              </h2>
+            </div>
 
             {/* Cart Items */}
-            <div className="max-h-60 overflow-y-auto">
+            <div className="mt-22 max-h-85 overflow-y-auto px-6 py-4">
               {cart.length === 0 ? (
                 <p className="text-dark-purple">Your cart is empty.</p>
               ) : (
                 cart.map((item) => (
                   <div
                     key={item.id}
-                    className="flex justify-between items-center mb-4"
+                    className="flex flex-row gap-x-4 items-center mb-6 bg-light-pink/25 rounded-lg w-[340px] py-6 px-6 relative"
                   >
                     <img
                       src={item.image}
                       alt={item.name}
-                      className="w-14 h-14 rounded-md"
+                      className="w-24 h-24 rounded-md"
                     />
-                    <div className="flex flex-col">
+                    <div className="flex flex-col font-montserrat">
                       <p className="text-sm font-bold">{item.name}</p>
                       <p className="text-sm">
                         £{(item.price * item.quantity).toFixed(2)}
@@ -94,7 +97,7 @@ const ShoppingCart = ({ cart, setCart, isCartOpen, setIsCartOpen }) => {
                       </div>
                     </div>
                     <button
-                      className="text-red-500 text-sm font-bold"
+                      className="text-red-600 text-sm font-bold font-montserrat absolute top-20 left-60"
                       onClick={() => removeFromCart(item.id)}
                     >
                       Remove
@@ -105,12 +108,12 @@ const ShoppingCart = ({ cart, setCart, isCartOpen, setIsCartOpen }) => {
             </div>
 
             {/* Subtotal & Checkout */}
-            <div className="border-t pt-4 mt-4">
+            <div className="border-t pt-4 mt-4 font-montserrat">
               <div className="flex justify-between mb-2">
                 <span className="font-bold">Subtotal:</span>
                 <span>£{subtotal}</span>
               </div>
-              <button className="w-full bg-medium-pink text-white py-2 font-bold rounded-md">
+              <button className="w-full bg-medium-pink text-white py-2 font-bold rounded-md font-montserrat">
                 Go to Checkout
               </button>
             </div>
