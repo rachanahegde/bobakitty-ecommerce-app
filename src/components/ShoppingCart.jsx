@@ -42,7 +42,7 @@ const ShoppingCart = ({ cart, setCart, isCartOpen, setIsCartOpen }) => {
     <>
       {/* Shopping Cart Sidebar */}
       <div
-        className={`fixed right-0 top-24 w-[400px] bg-white shadow-lg transform ${
+        className={`fixed right-0 top-20 w-[400px] bg-white shadow-lg transform ${
           isCartOpen ? "translate-x-0" : "translate-x-full"
         } transition-transform duration-300 ease-in-out z-50`}
       >
@@ -65,7 +65,9 @@ const ShoppingCart = ({ cart, setCart, isCartOpen, setIsCartOpen }) => {
         {/* Cart Items */}
         <div className="mt-22 max-h-85 overflow-y-auto px-6 py-4">
           {cart.length === 0 ? (
-            <p className="text-dark-purple">Your cart is empty.</p>
+            <p className="text-dark-purple font-montserrat font-bold text-center">
+              Your cart is empty.
+            </p>
           ) : (
             cart.map((item) => (
               <div
