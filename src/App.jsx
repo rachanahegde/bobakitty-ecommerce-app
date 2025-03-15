@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Menu from "./pages/Menu";
 import Shop from "./pages/Shop";
 import Contact from "./pages/Contact";
+import Checkout from "./pages/Checkout";
 import ShoppingCart from "./components/ShoppingCart"; // Import ShoppingCart component
 import "./index.css";
 
@@ -15,14 +16,15 @@ function App() {
 
   return (
     <Router>
-      {/* Add bg-dark-purple to the background div */}
       <div className="min-h-screen bg-dark-purple">
         {/* Pass setIsCartOpen to Navbar so it can open the cart */}
         <Navbar setIsCartOpen={setIsCartOpen} />
+
         {/* Routes for different pages */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/menu" element={<Menu />} />
+
           {/* Pass cart state to Shop so it can add products to cart */}
           <Route
             path="/shop"
@@ -36,6 +38,8 @@ function App() {
             }
           />
           <Route path="/contact" element={<Contact />} />
+
+          <Route path="/checkout" element={<Checkout cart={cart} />} />
         </Routes>
 
         {/* Global Shopping Cart Overlay */}
