@@ -119,9 +119,14 @@ const ShoppingCart = ({ cart, setCart, isCartOpen, setIsCartOpen }) => {
             </span>
             <p className="font-bold text-3xl mb-6 text-black">£{subtotal}</p>
           </div>
-          <button className="w-full bg-white text-dark-purple py-3 text-md font-extrabold rounded-3xl font-montserrat uppercase hover:bg-medium-pink">
+
+          {/* Link to Checkout Page */}
+          <Link
+            to="/checkout"
+            className="block text-center w-full bg-white text-dark-purple py-3 text-md font-extrabold rounded-3xl font-montserrat uppercase hover:bg-medium-pink mt-4"
+          >
             Go to Checkout
-          </button>
+          </Link>
         </div>
       </div>
     </>
