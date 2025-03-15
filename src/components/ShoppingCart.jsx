@@ -1,5 +1,6 @@
 import emptyCartIcon from "../assets/icons/empty_cart.png";
 import fullCartIcon from "../assets/icons/full_cart.png";
+import { Link } from "react-router-dom"; // Import Link for navigation
 
 const ShoppingCart = ({ cart, setCart, isCartOpen, setIsCartOpen }) => {
   // Calculate total items in cart
@@ -112,22 +113,24 @@ const ShoppingCart = ({ cart, setCart, isCartOpen, setIsCartOpen }) => {
         </div>
 
         {/* Subtotal & Checkout */}
-        <div className="pt-8 font-montserrat bg-light-pink w-full absolute right-0 px-10 py-10 rounded-b-lg">
-          <div className="flex flex-col gap-y-4 items-center">
-            <span className="font-extrabold uppercase text-lg text-black">
-              Subtotal
-            </span>
-            <p className="font-bold text-3xl mb-6 text-black">£{subtotal}</p>
-          </div>
+        {cart.length > 0 && (
+          <div className="pt-8 font-montserrat bg-light-pink w-full absolute right-0 px-10 py-10 rounded-b-lg">
+            <div className="flex flex-col gap-y-4 items-center">
+              <span className="font-extrabold uppercase text-lg text-black">
+                Subtotal
+              </span>
+              <p className="font-bold text-3xl mb-6 text-black">£{subtotal}</p>
+            </div>
 
-          {/* Link to Checkout Page */}
-          <Link
-            to="/checkout"
-            className="block text-center w-full bg-white text-dark-purple py-3 text-md font-extrabold rounded-3xl font-montserrat uppercase hover:bg-medium-pink mt-4"
-          >
-            Go to Checkout
-          </Link>
-        </div>
+            {/* Link to Checkout Page */}
+            <Link
+              to="/checkout"
+              className="block text-center w-full bg-white text-dark-purple py-3 text-md font-extrabold rounded-3xl font-montserrat uppercase hover:bg-medium-pink mt-4"
+            >
+              Go to Checkout
+            </Link>
+          </div>
+        )}
       </div>
     </>
   );
