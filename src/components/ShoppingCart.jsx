@@ -108,12 +108,16 @@ const ShoppingCart = ({ cart, setCart, isCartOpen, setIsCartOpen }) => {
             </div>
 
             {/* Subtotal & Checkout */}
-            <div className="border-t pt-4 mt-4 font-montserrat">
-              <div className="flex justify-between mb-2">
-                <span className="font-bold">Subtotal:</span>
-                <span>£{subtotal}</span>
+            <div className="pt-8 mt-4 font-montserrat bg-light-pink w-full absolute right-0 px-10 py-10 rounded-b-lg">
+              <div className="flex flex-col gap-y-4 items-center">
+                <span className="font-extrabold uppercase text-lg text-black">
+                  Subtotal
+                </span>
+                <p className="font-bold text-3xl mb-6 text-black">
+                  £{subtotal}
+                </p>
               </div>
-              <button className="w-full bg-medium-pink text-white py-2 font-bold rounded-md font-montserrat">
+              <button className="w-full bg-white text-dark-purple py-3 text-md font-extrabold rounded-3xl font-montserrat uppercase hover:bg-medium-pink">
                 Go to Checkout
               </button>
             </div>
