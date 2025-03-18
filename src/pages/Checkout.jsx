@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import angleLeft from "../assets/icons/angle-left.png";
 
 const Checkout = ({ cart }) => {
   const [email, setEmail] = useState("");
@@ -51,7 +52,7 @@ const Checkout = ({ cart }) => {
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-light-pink"
+            className="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-light-pink font-montserrat"
           />
 
           {/* Shipping Address */}
@@ -59,7 +60,7 @@ const Checkout = ({ cart }) => {
             Shipping Address
           </h1>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-y-4 font-montserrat">
             {/* Country Dropdown */}
             <select
               name="country"
@@ -74,23 +75,25 @@ const Checkout = ({ cart }) => {
               <option value="AU">Australia</option>
             </select>
 
-            {/* First & Last Name */}
-            <input
-              type="text"
-              name="firstName"
-              placeholder="First Name"
-              value={shippingInfo.firstName}
-              onChange={handleInputChange}
-              className="w-full border border-gray-300 rounded-md p-3"
-            />
-            <input
-              type="text"
-              name="lastName"
-              placeholder="Last Name"
-              value={shippingInfo.lastName}
-              onChange={handleInputChange}
-              className="w-full border border-gray-300 rounded-md p-3"
-            />
+            <div className="grid grid-cols-2 gap-4 font-montserrat">
+              {/* First & Last Name */}
+              <input
+                type="text"
+                name="firstName"
+                placeholder="First Name"
+                value={shippingInfo.firstName}
+                onChange={handleInputChange}
+                className="w-full border border-gray-300 rounded-md p-3 font-montserrat"
+              />
+              <input
+                type="text"
+                name="lastName"
+                placeholder="Last Name"
+                value={shippingInfo.lastName}
+                onChange={handleInputChange}
+                className="w-full border border-gray-300 rounded-md p-3 font-montserrat"
+              />
+            </div>
           </div>
 
           {/* Address Fields */}
@@ -100,7 +103,7 @@ const Checkout = ({ cart }) => {
             placeholder="Address"
             value={shippingInfo.address}
             onChange={handleInputChange}
-            className="w-full border border-gray-300 rounded-md p-3"
+            className="w-full border border-gray-300 rounded-md p-3 font-montserrat"
           />
           <input
             type="text"
@@ -108,11 +111,11 @@ const Checkout = ({ cart }) => {
             placeholder="Apartment, Suite, etc. (Optional)"
             value={shippingInfo.apartment}
             onChange={handleInputChange}
-            className="w-full border border-gray-300 rounded-md p-3"
+            className="w-full border border-gray-300 rounded-md p-3 font-montserrat"
           />
 
           {/* City & Postcode */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-montserrat">
             <input
               type="text"
               name="city"
@@ -138,21 +141,34 @@ const Checkout = ({ cart }) => {
             placeholder="Phone Number"
             value={shippingInfo.phone}
             onChange={handleInputChange}
-            className="w-full border border-gray-300 rounded-md p-3"
+            className="w-full border border-gray-300 rounded-md p-3 font-montserrat"
           />
 
-          {/* Continue Button */}
-          <Link
-            to="/shipping"
-            className="block text-center bg-light-pink text-white py-3 text-lg font-bold rounded-md hover:bg-medium-pink transition"
-          >
-            Continue to Shipping
-          </Link>
+          <div className="flex flex-row gap-x-36">
+            {/* Return to shop link */}
+            <div className="flex items-center space-x-1">
+              <img src={angleLeft} className="w-[30px]" alt="" />
+              <Link
+                to="/shop"
+                className="text-dark-purple text-md font-semibold font-montserrat"
+              >
+                Return to Shop
+              </Link>
+            </div>
+
+            {/* Continue Button */}
+            <Link
+              to="/shipping"
+              className="text-center font-montserrat bg-light-pink text-white py-3 text-md font-bold rounded-md hover:bg-medium-pink transition px-4"
+            >
+              Continue to Shipping
+            </Link>
+          </div>
         </div>
 
         {/* Right Column - Order Summary */}
         <div className="bg-white border border-gray-300 rounded-md p-6">
-          <h2 className="text-xl font-montserrat font-bold text-dark-purple mb-4">
+          <h2 className="text-xl font-montserrat font-bold text-dark-purple mb-6">
             Order Summary
           </h2>
 
@@ -161,7 +177,7 @@ const Checkout = ({ cart }) => {
             {cart.map((item) => (
               <div
                 key={item.id}
-                className="flex items-center justify-between border-b pb-4"
+                className="flex items-center justify-between pb-4"
               >
                 {/* Product Image */}
                 <img
@@ -201,7 +217,7 @@ const Checkout = ({ cart }) => {
           {/* Total Cost */}
           <div className="flex justify-between font-montserrat text-lg font-bold mt-4">
             <span>Total</span>
-            <span>£{total}</span>
+            <span>GBP £{total}</span>
           </div>
 
           {/* Tax Info */}
