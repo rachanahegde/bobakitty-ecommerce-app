@@ -1,8 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import angleLeft from "../assets/icons/angle-left.png";
+import CheckoutInformation from "../components/CheckoutInformation";
+import CheckoutShipping from "../components/CheckoutShipping";
+import OrderSummary from "../components/OrderSummary";
 
 const Checkout = ({ cart }) => {
+  // State for user input (Step 1: Information)
+  const [step, setStep] = useState(1); // Step 1 = Information, Step 2 = Shipping
   const [email, setEmail] = useState("");
   const [shippingInfo, setShippingInfo] = useState({
     country: "",
@@ -15,12 +20,19 @@ const Checkout = ({ cart }) => {
     phone: "",
   });
 
+  const [shippingMethod, setShippingMethod] = useState("Royal Mail"); // Default method
+  const shippingCosts = {
+    "Royal Mail": 3.94,
+    "DHL Next Working Day": 10.0,
+  };
+
   const subtotal = cart.reduce(
     (total, item) => total + item.quantity * item.price,
     0
   );
   const tax = (subtotal * 0.2).toFixed(2); // 20% tax
-  const total = subtotal.toFixed(2); // Total (including tax)
+  const shippingCost = subtotal > 20 ? 0 : shippingCosts[shippingMethod]; // Free shipping over £20
+  const total = (subtotal + shippingCost).toFixed(2); // Total (including shipping)
 
   // Handle input changes
   const handleInputChange = (e) => {
@@ -31,6 +43,7 @@ const Checkout = ({ cart }) => {
     <div className="min-h-screen bg-gray-100 p-6">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 bg-white shadow-lg rounded-lg p-8">
         {/* Left Column - Checkout Form */}
+
         <div className="space-y-6">
           {/* Bobakitty Café Logo */}
           <h1 className="text-3xl font-pacifico text-light-pink">
