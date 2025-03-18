@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import { useState } from "react"; // Import useState
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -10,50 +15,78 @@ import Checkout from "./pages/Checkout";
 import ShoppingCart from "./components/ShoppingCart"; // Import ShoppingCart component
 import "./index.css";
 
+// Component to conditionally render Navbar
+const Layout = ({ children, isCartOpen, setIsCartOpen, isCheckoutPage }) => {
+  return (
+    <div className="min-h-screen bg-dark-purple">
+      {!isCheckoutPage && <Navbar setIsCartOpen={setIsCartOpen} />}
+      {children}
+      {!isCheckoutPage && <Footer />}
+    </div>
+  );
+};
+
 function App() {
   const [cart, setCart] = useState([]); // Store cart items
   const [isCartOpen, setIsCartOpen] = useState(false); // Control cart visibility
 
   return (
     <Router>
-      <div className="min-h-screen bg-dark-purple">
-        {/* Pass setIsCartOpen to Navbar so it can open the cart */}
-        <Navbar setIsCartOpen={setIsCartOpen} />
+      {/* Move useLocation inside Router */}
+      <AppContent
+        cart={cart}
+        setCart={setCart}
+        isCartOpen={isCartOpen}
+        setIsCartOpen={setIsCartOpen}
+      />
+    </Router>
+  );
+}
 
-        {/* Routes for different pages */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/menu" element={<Menu />} />
+// New component inside Router to fix useLocation issue
+const AppContent = ({ cart, setCart, isCartOpen, setIsCartOpen }) => {
+  const location = useLocation(); // ✅ Now inside <Router>, so no error
+  const isCheckoutPage = location.pathname === "/checkout"; // Check if on checkout
 
-          {/* Pass cart state to Shop so it can add products to cart */}
-          <Route
-            path="/shop"
-            element={
-              <Shop
-                cart={cart}
-                setCart={setCart}
-                isCartOpen={isCartOpen}
-                setIsCartOpen={setIsCartOpen}
-              />
-            }
-          />
-          <Route path="/contact" element={<Contact />} />
+  return (
+    <Layout
+      isCartOpen={isCartOpen}
+      setIsCartOpen={setIsCartOpen}
+      isCheckoutPage={isCheckoutPage}
+    >
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/menu" element={<Menu />} />
 
-          <Route path="/checkout" element={<Checkout cart={cart} />} />
-        </Routes>
+        {/* Pass cart state to Shop page */}
+        <Route
+          path="/shop"
+          element={
+            <Shop
+              cart={cart}
+              setCart={setCart}
+              isCartOpen={isCartOpen}
+              setIsCartOpen={setIsCartOpen}
+            />
+          }
+        />
+        <Route path="/contact" element={<Contact />} />
 
-        {/* Global Shopping Cart Overlay */}
+        {/* Pass cart state to Checkout page */}
+        <Route path="/checkout" element={<Checkout cart={cart} />} />
+      </Routes>
+
+      {/* Hide shopping cart overlay on Checkout Page */}
+      {!isCheckoutPage && (
         <ShoppingCart
           cart={cart}
           setCart={setCart}
           isCartOpen={isCartOpen}
           setIsCartOpen={setIsCartOpen}
         />
-
-        <Footer />
-      </div>
-    </Router>
+      )}
+    </Layout>
   );
-}
+};
 
 export default App;
