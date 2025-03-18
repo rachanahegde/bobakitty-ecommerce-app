@@ -8,9 +8,23 @@ const CheckoutInformation = ({
   setEmail,
   shippingInfo,
   setShippingInfo,
+  setStep,
 }) => {
   const handleInputChange = (e) => {
     setShippingInfo({ ...shippingInfo, [e.target.name]: e.target.value });
+  };
+
+  const isFormValid = () => {
+    return (
+      email.trim() !== "" &&
+      shippingInfo.country.trim() !== "" &&
+      shippingInfo.firstName.trim() !== "" &&
+      shippingInfo.lastName.trim() !== "" &&
+      shippingInfo.address.trim() !== "" &&
+      shippingInfo.city.trim() !== "" &&
+      shippingInfo.postcode.trim() !== "" &&
+      shippingInfo.phone.trim() !== ""
+    );
   };
 
   return (
@@ -121,12 +135,17 @@ const CheckoutInformation = ({
         </div>
 
         {/* Continue Button */}
-        <Link
-          to="/shipping"
-          className="text-center font-montserrat bg-light-pink text-white py-3 text-md font-bold rounded-md hover:bg-medium-pink transition px-4"
+        <button
+          onClick={() => isFormValid() && setStep(2)}
+          disabled={!isFormValid()}
+          className={`text-center font-montserrat py-3 text-md font-bold rounded-md transition px-4 ${
+            isFormValid()
+              ? "bg-light-pink text-white hover:bg-medium-pink"
+              : "bg-gray-300 text-gray-500 cursor-not-allowed"
+          }`}
         >
           Continue to Shipping
-        </Link>
+        </button>
       </div>
     </div>
   );

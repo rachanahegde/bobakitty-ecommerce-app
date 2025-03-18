@@ -2,14 +2,11 @@
 // Shows products in the cart, subtotal, shipping, and total cost.
 // Updates dynamically when shipping method changes.
 // It displays as a sidebar on the right throughout the checkout process
-
-const OrderSummary = ({ cart }) => {
+const OrderSummary = ({ cart, shippingCost, total, tax }) => {
   const subtotal = cart.reduce(
     (total, item) => total + item.quantity * item.price,
     0
   );
-  const tax = (subtotal * 0.2).toFixed(2);
-  const total = subtotal.toFixed(2);
   return (
     <div className="bg-white border border-gray-300 rounded-md p-6">
       <h2 className="text-xl font-montserrat font-bold text-dark-purple mb-6">
@@ -39,6 +36,10 @@ const OrderSummary = ({ cart }) => {
         </span>
         <span className="text-md font-bold">£{subtotal.toFixed(2)}</span>
       </div>
+      <div className="flex justify-between font-montserrat mt-2">
+        <span className="text-md">Shipping</span>
+        <span className="text-md">£{shippingCost.toFixed(2)}</span>
+      </div>
       <div className="flex justify-between font-montserrat text-lg font-bold mt-4">
         <span>Total</span>
         <span>GBP £{total}</span>
@@ -47,4 +48,5 @@ const OrderSummary = ({ cart }) => {
     </div>
   );
 };
+
 export default OrderSummary;
