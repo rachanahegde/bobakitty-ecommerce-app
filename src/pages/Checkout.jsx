@@ -19,7 +19,7 @@ const Checkout = ({ cart }) => {
     0
   );
   const tax = (subtotal * 0.2).toFixed(2); // 20% tax
-  const total = (subtotal + parseFloat(tax)).toFixed(2); // Total after tax
+  const total = subtotal.toFixed(2); // Total (including tax)
 
   // Handle input changes
   const handleInputChange = (e) => {
