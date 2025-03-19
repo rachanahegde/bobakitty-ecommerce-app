@@ -83,8 +83,14 @@ const Checkout = ({ cart }) => {
   }, [shippingCost, subtotal]);
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 bg-white shadow-lg rounded-lg p-8">
+    <div className="min-h-screen bg-gray-100 p-6 flex justify-center items-center">
+      <div
+        className={`max-w-6xl mx-auto ${
+          step === 4
+            ? "w-full max-w-2xl"
+            : "grid grid-cols-1 md:grid-cols-2 gap-12"
+        } bg-white shadow-lg rounded-lg p-8`}
+      >
         {step === 1 ? (
           <CheckoutInformation
             email={email}

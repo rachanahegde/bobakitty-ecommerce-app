@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "name": "Teapot",
+    "description": "Handcrafted earthenware teapot with a rustic design, perfect for brewing your favorite tea.",
+    "price": 19.99,
+    "image": "src/assets/images/products/teapot.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Teapot and Teacup Set",
+    "description": "Elegant white ceramic teapot and teacup set, ideal for a refined tea-drinking experience.",
+    "price": 25.99,
+    "image": "src/assets/images/products/teapot_teacup.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Porcelain Teapot and Teacup",
+    "description": "A delicate porcelain teapot and teacup set with intricate details, perfect for afternoon tea.",
+    "price": 12.99,
+    "image": "src/assets/images/products/porcelain_teapot.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Matcha Green Tea",
+    "description": "Premium Japanese matcha powder, rich in antioxidants with a smooth, earthy flavor.",
+    "price": 30.99,
+    "image": "src/assets/images/products/matcha.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Matcha Whisk Set",
+    "description": "Complete matcha-making set with a bamboo whisk, scoop, and ceramic bowl.",
+    "price": 14.99,
+    "image": "src/assets/images/products/matcha_kit.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Moroccan Mint Tea",
+    "description": "A refreshing blend of green tea and peppermint for a soothing and aromatic brew.",
+    "price": 9.99,
+    "image": "src/assets/images/products/green_mint_tea.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Green & Fruit Tea Mix",
+    "description": "A flavorful fusion of green tea and dried fruit pieces, naturally sweet and refreshing.",
+    "price": 23.99,
+    "image": "src/assets/images/products/green_fruit_tea.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Chai Tea Blend",
+    "description": "A bold and aromatic blend of Assam tea with warming spices like cinnamon, cardamom, and ginger.",
+    "price": 14.99,
+    "image": "src/assets/images/products/chai.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Tapioca Pearls",
+    "description": "Classic chewy boba pearls for making homemade bubble tea, easy to prepare and delicious.",
+    "price": 19.99,
+    "image": "src/assets/images/products/tapioca_pearls.jpg"
+  }
+]

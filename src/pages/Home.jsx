@@ -181,7 +181,7 @@ const Home = () => {
       {/* Read More Btn */}
       <div className="pb-8">
         <Link
-          to="/about"
+          to="/contact"
           className="px-6 py-3 bg-gradient-to-r from-light-purple to-medium-purple text-dark-purple font-montserrat font-bold text-sm rounded-full shadow-md hover:scale-105 transition-transform"
         >
           Read More
