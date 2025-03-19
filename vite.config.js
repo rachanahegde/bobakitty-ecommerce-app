@@ -5,4 +5,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   base: "./",
+  json: {
+    stringify: true, // Enables importing JSON files
+  },
 });
