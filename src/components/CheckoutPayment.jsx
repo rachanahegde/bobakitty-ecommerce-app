@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import visaIcon from "../assets/icons/visa.png";
 import amexIcon from "../assets/icons/amex.png";
 import mastercardIcon from "../assets/icons/mastercard.png";
+import angleLeft from "../assets/icons/angle-left.png";
 
 const CheckoutPayment = ({
   email,
@@ -33,14 +34,14 @@ const CheckoutPayment = ({
       </p>
 
       <div className="space-y-4 border-b pb-4">
-        <div className="flex flex-row space-x-6">
-          <p className="text-md font-montserrat font-bold text-dark-purple">
+        <div className="flex flex-row space-x-4">
+          <p className="text-md font-montserrat font-bold text-dark-purple w-[150px]">
             Contact
           </p>
           <p className="text-md font-montserrat">{email}</p>
         </div>
-        <div className="flex flex-row space-x-6">
-          <p className="text-md font-montserrat font-bold text-dark-purple">
+        <div className="flex flex-row space-x-8">
+          <p className="text-md font-montserrat font-bold text-dark-purple w-[200px]">
             Ship to
           </p>
           <p className="text-md font-montserrat">
@@ -48,7 +49,7 @@ const CheckoutPayment = ({
             , {shippingInfo.country}
           </p>
         </div>
-        <div className="flex flex-row space-x-6">
+        <div className="flex flex-row space-x-4 mb-4">
           <p className="text-md font-montserrat font-bold text-dark-purple">
             Shipping method
           </p>
@@ -167,12 +168,16 @@ const CheckoutPayment = ({
       )}
 
       <div className="flex justify-between mt-6">
-        <button
-          onClick={() => setStep(2)}
-          className="text-dark-purple text-md font-semibold font-montserrat"
-        >
-          Return to Shipping
-        </button>
+        <div className="flex items-center space-x-1">
+          <img src={angleLeft} className="w-[30px]" alt="" />
+          <button
+            onClick={() => setStep(2)}
+            className="text-dark-purple text-md font-semibold font-montserrat cursor-pointer"
+          >
+            Return to Shipping
+          </button>
+        </div>
+
         <button className="text-center font-montserrat bg-light-pink text-white py-3 text-md font-bold rounded-md hover:bg-medium-pink transition px-4">
           Review Order
         </button>

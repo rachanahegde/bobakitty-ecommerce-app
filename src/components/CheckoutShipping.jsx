@@ -3,6 +3,7 @@
 // Allows users to select a shipping method.
 
 import { Link } from "react-router-dom";
+import angleLeft from "../assets/icons/angle-left.png";
 
 const CheckoutShipping = ({
   email,
@@ -12,6 +13,9 @@ const CheckoutShipping = ({
   shippingCosts,
   setStep,
 }) => {
+  // TODO CHECK THIS IS WORKING
+  console.log("Selected Shipping Method:", shippingMethod);
+
   return (
     <div className="space-y-6">
       <h1 className="text-3xl font-pacifico text-light-pink">Bobakitty Café</h1>
@@ -55,7 +59,7 @@ const CheckoutShipping = ({
               name="shippingMethod"
               value={method}
               checked={shippingMethod === method}
-              onChange={() => setShippingMethod(method)}
+              onChange={(e) => setShippingMethod(e.target.value)}
               className="mr-3"
             />
             <span className="font-montserrat">
@@ -66,12 +70,16 @@ const CheckoutShipping = ({
       </div>
 
       <div className="flex justify-between">
-        <button
-          onClick={() => setStep(1)}
-          className="text-dark-purple text-md font-semibold font-montserrat"
-        >
-          Return to Information
-        </button>
+        <div className="flex items-center space-x-1">
+          <img src={angleLeft} className="w-[30px]" alt="" />
+          <button
+            onClick={() => setStep(1)}
+            className="text-dark-purple text-md font-semibold font-montserrat cursor-pointer"
+          >
+            Return to Information
+          </button>
+        </div>
+
         <button
           onClick={() => setStep(3)}
           className="text-center font-montserrat bg-light-pink text-white py-3 text-md font-bold rounded-md hover:bg-medium-pink transition px-4"
