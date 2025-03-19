@@ -178,7 +178,10 @@ const CheckoutPayment = ({
           </button>
         </div>
 
-        <button className="text-center font-montserrat bg-light-pink text-white py-3 text-md font-bold rounded-md hover:bg-medium-pink transition px-4">
+        <button
+          onClick={() => setStep(4)}
+          className="text-center font-montserrat bg-light-pink text-white py-3 text-md font-bold rounded-md hover:bg-medium-pink transition px-4"
+        >
           Review Order
         </button>
       </div>

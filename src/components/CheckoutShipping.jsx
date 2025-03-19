@@ -13,9 +13,6 @@ const CheckoutShipping = ({
   shippingCosts,
   setStep,
 }) => {
-  // TODO CHECK THIS IS WORKING
-  console.log("Selected Shipping Method:", shippingMethod);
-
   return (
     <div className="space-y-6">
       <h1 className="text-3xl font-pacifico text-light-pink">Bobakitty Café</h1>
