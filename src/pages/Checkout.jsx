@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useCallback, useEffect, useState, useMemo } from "react";
 import CheckoutInformation from "../components/CheckoutInformation";
 import CheckoutShipping from "../components/CheckoutShipping";
+import CheckoutPayment from "../components/CheckoutPayment";
 import OrderSummary from "../components/OrderSummary";
 
 const Checkout = ({ cart }) => {
@@ -19,18 +19,67 @@ const Checkout = ({ cart }) => {
   });
 
   const [shippingMethod, setShippingMethod] = useState("Royal Mail Tracked 24"); // Default method
-  const shippingCosts = {
-    "Royal Mail Tracked 24": 3.94,
-    "DHL Next Working Day": 10.0,
-  };
+  const [billingSameAsShipping, setBillingSameAsShipping] = useState(true);
+  const [billingInfo, setBillingInfo] = useState({
+    country: "",
+    firstName: "",
+    lastName: "",
+    address: "",
+    apartment: "",
+    city: "",
+    postcode: "",
+    phone: "",
+  });
+
+  const [paymentDetails, setPaymentDetails] = useState({
+    cardNumber: "",
+    expiryDate: "",
+    securityCode: "",
+    cardName: "",
+  });
+
+  const shippingCosts = useMemo(
+    () => ({
+      "Royal Mail Tracked 24": 3.94,
+      "DHL Next Working Day": 10.0,
+    }),
+    []
+  );
 
   const subtotal = cart.reduce(
     (total, item) => total + item.quantity * item.price,
     0
   );
   const tax = (subtotal * 0.2).toFixed(2);
-  const shippingCost = subtotal > 20 ? 0 : shippingCosts[shippingMethod];
-  const total = (subtotal + shippingCost).toFixed(2);
+
+  const [shippingCost, setShippingCost] = useState(
+    subtotal > 20 ? 0 : shippingCosts[shippingMethod]
+  );
+
+  // Function to calculate shipping cost
+  const calculateShippingCost = useCallback(() => {
+    return subtotal > 20 ? 0 : shippingCosts[shippingMethod] || 0;
+  }, [subtotal, shippingMethod, shippingCosts]);
+
+  useEffect(() => {
+    if (!shippingCosts || !shippingMethod) return;
+
+    // Trim to avoid key mismatches
+    const trimmedShippingMethod = shippingMethod.trim();
+    const newShippingCost =
+      subtotal > 20 ? 0 : shippingCosts[trimmedShippingMethod] || 0;
+
+    if (newShippingCost !== shippingCost) {
+      setShippingCost(newShippingCost);
+    }
+  }, [shippingMethod, subtotal, shippingCosts, shippingCost]);
+
+  // Make sure the total updates dynamically when the shipping method (and cost) is selected.
+  const [total, setTotal] = useState((subtotal + shippingCost).toFixed(2));
+
+  useEffect(() => {
+    setTotal((parseFloat(subtotal) + parseFloat(shippingCost)).toFixed(2));
+  }, [shippingCost, subtotal]);
 
   return (
     <div className="min-h-screen bg-gray-100 p-6">
@@ -41,7 +90,7 @@ const Checkout = ({ cart }) => {
             setEmail={setEmail}
             shippingInfo={shippingInfo}
             setShippingInfo={setShippingInfo}
-            setStep={setStep} // Pass setStep to change steps
+            setStep={setStep}
           />
         ) : step === 2 ? (
           <CheckoutShipping
@@ -50,19 +99,23 @@ const Checkout = ({ cart }) => {
             shippingMethod={shippingMethod}
             setShippingMethod={setShippingMethod}
             shippingCosts={shippingCosts}
-            setStep={setStep} // Pass setStep to change steps
+            setStep={setStep}
           />
         ) : (
-          <div className="text-center text-dark-purple text-lg font-montserrat">
-            Payment Section Coming Soon...
-          </div>
+          <CheckoutPayment
+            email={email}
+            shippingInfo={shippingInfo}
+            shippingMethod={shippingMethod}
+            billingSameAsShipping={billingSameAsShipping}
+            setBillingSameAsShipping={setBillingSameAsShipping}
+            billingInfo={billingInfo}
+            setBillingInfo={setBillingInfo}
+            paymentDetails={paymentDetails}
+            setPaymentDetails={setPaymentDetails}
+            setStep={setStep}
+          />
         )}
-        <OrderSummary
-          cart={cart}
-          shippingCost={shippingCost}
-          total={total}
-          tax={tax}
-        />
+        <OrderSummary cart={cart} shippingCost={shippingCost} tax={tax} />
       </div>
     </div>
   );
