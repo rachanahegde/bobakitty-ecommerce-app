@@ -33,23 +33,27 @@ const CheckoutReview = ({
       </p>
 
       {/* Contact Information */}
-      <div className="border-b pb-4">
-        <h2 className="text-xl font-bold text-dark-purple">Contact</h2>
-        <p className="text-md font-montserrat">{email}</p>
+      <div className="pb-0">
+        <h2 className="text-xl font-bold text-dark-purple mb-4">Contact</h2>
+        <p className="text-md font-montserrat bg-[#afafaf44] py-2 rounded-md px-4">
+          {email}
+        </p>
       </div>
 
       {/* Shipping Address */}
-      <div className="border-b pb-4">
-        <h2 className="text-xl font-bold text-dark-purple mb-2">
+      <div className="">
+        <h2 className="text-xl font-bold text-dark-purple mb-4">
           Shipping Address
         </h2>
-        <p className="text-md font-montserrat">
-          {shippingInfo.firstName} {shippingInfo.lastName}
-        </p>
-        <p className="text-md font-montserrat">
-          {shippingInfo.address}, {shippingInfo.city}, {shippingInfo.postcode},{" "}
-          {shippingInfo.country}
-        </p>
+        <div className="bg-[#afafaf44] py-2 rounded-md px-4">
+          <p className="text-md font-montserrat">
+            {shippingInfo.firstName} {shippingInfo.lastName}
+          </p>
+          <p className="text-md font-montserrat">
+            {shippingInfo.address}, {shippingInfo.city}, {shippingInfo.postcode}
+            , {shippingInfo.country}
+          </p>
+        </div>
       </div>
 
       {/* Billing Address */}
@@ -58,30 +62,34 @@ const CheckoutReview = ({
           <h2 className="text-xl font-bold text-dark-purple mb-2">
             Billing Address
           </h2>
-          <p className="text-md font-montserrat">
-            {billingInfo.firstName} {billingInfo.lastName}
-          </p>
-          <p className="text-md font-montserrat">
-            {billingInfo.address}, {billingInfo.city}, {billingInfo.postcode},{" "}
-            {billingInfo.country}
-          </p>
+          <div className="bg-[#afafaf44] py-2 rounded-md px-4">
+            <p className="text-md font-montserrat">
+              {billingInfo.firstName} {billingInfo.lastName}
+            </p>
+            <p className="text-md font-montserrat">
+              {billingInfo.address}, {billingInfo.city}, {billingInfo.postcode},{" "}
+              {billingInfo.country}
+            </p>
+          </div>
         </div>
       )}
 
       {/* Shipping Method */}
-      <div className="border-b pb-4">
+      <div className="">
         <h2 className="text-xl font-bold text-dark-purple mb-2">
           Shipping Method
         </h2>
-        <p className="text-md font-montserrat">{shippingMethod}</p>
+        <p className="text-md font-montserrat bg-[#afafaf44] py-2 rounded-md px-4">
+          {shippingMethod}
+        </p>
       </div>
 
       {/* Payment Method */}
-      <div className="border-b pb-4">
+      <div className="">
         <h2 className="text-xl font-bold text-dark-purple mb-2">
           Payment Method
         </h2>
-        <p className="text-md font-montserrat">
+        <p className="text-md font-montserrat bg-[#afafaf44] py-2 rounded-md px-4">
           Credit Card ending in{" "}
           <span className="font-bold">
             {paymentDetails.cardNumber.slice(-4)}
@@ -90,7 +98,7 @@ const CheckoutReview = ({
       </div>
 
       {/* Order Summary */}
-      <div className="border-b pb-4">
+      <div className="pb-4">
         <h2 className="text-xl font-bold text-dark-purple">Order Summary</h2>
         <div className="space-y-4">
           {cart.map((item) => (
