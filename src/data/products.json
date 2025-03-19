@@ -4,7 +4,7 @@
     "name": "Teapot",
     "description": "Handcrafted earthenware teapot with a rustic design, perfect for brewing your favorite tea.",
     "price": 19.99,
-    "image": "src/assets/images/products/teapot.jpg"
+    "image": "../assets/images/products/teapot.jpg"
   },
   {
     "id": 2,
