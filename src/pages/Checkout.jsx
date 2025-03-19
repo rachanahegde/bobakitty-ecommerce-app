@@ -3,9 +3,10 @@ import CheckoutInformation from "../components/CheckoutInformation";
 import CheckoutShipping from "../components/CheckoutShipping";
 import CheckoutPayment from "../components/CheckoutPayment";
 import OrderSummary from "../components/OrderSummary";
+import CheckoutReview from "../components/CheckoutReview";
 
 const Checkout = ({ cart }) => {
-  const [step, setStep] = useState(1); // 1 = Information, 2 = Shipping, 3 = Payment
+  const [step, setStep] = useState(1); // 1 = Information, 2 = Shipping, 3 = Payment, 4 = Review
   const [email, setEmail] = useState("");
   const [shippingInfo, setShippingInfo] = useState({
     country: "",
@@ -101,7 +102,7 @@ const Checkout = ({ cart }) => {
             shippingCosts={shippingCosts}
             setStep={setStep}
           />
-        ) : (
+        ) : step === 3 ? (
           <CheckoutPayment
             email={email}
             shippingInfo={shippingInfo}
@@ -114,8 +115,25 @@ const Checkout = ({ cart }) => {
             setPaymentDetails={setPaymentDetails}
             setStep={setStep}
           />
+        ) : (
+          <CheckoutReview
+            email={email}
+            shippingInfo={shippingInfo}
+            billingSameAsShipping={billingSameAsShipping}
+            billingInfo={billingInfo}
+            shippingMethod={shippingMethod}
+            paymentDetails={paymentDetails}
+            cart={cart}
+            shippingCost={shippingCost}
+            tax={tax}
+            total={total}
+            setStep={setStep}
+          />
         )}
-        <OrderSummary cart={cart} shippingCost={shippingCost} tax={tax} />
+        {/* Show Order Summary only if NOT on the Review Page */}
+        {step !== 4 && (
+          <OrderSummary cart={cart} shippingCost={shippingCost} tax={tax} />
+        )}
       </div>
     </div>
   );
