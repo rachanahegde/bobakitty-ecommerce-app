@@ -1,3 +1,5 @@
+import PawPrint from "../components/PawPrint"; // Import paw print component
+
 // Import images
 import cat_with_boba from "../assets/images/cats/cat_with_boba.jpg";
 import cat_cuddles from "../assets/images/cats/cat_cuddles.jpg";
@@ -57,11 +59,11 @@ const Home = () => {
   };
 
   return (
-    <div className="mt-6 text-center">
+    <div className="mt-6 text-center relative">
       <h1 className="text-2xl font-fredoka font-bold text-light-pink">
         Sip, Purr, Relax: The Ultimate Bubble Tea & Cat Café Experience!
       </h1>
-
+      <PawPrint />
       {/* Image Grid */}
       <div className="mt-10 max-w-3xl p-6 mx-auto rounded-2xl bg-white/25 backdrop-blur-lg shadow-xl border border-white/20">
         <div className="grid grid-cols-3 gap-6">
@@ -89,7 +91,6 @@ const Home = () => {
           />
         </div>
       </div>
-
       {/* Buttons */}
       <div className="mt-8 flex flex-col md:flex-row justify-center gap-6">
         <Link
@@ -105,12 +106,10 @@ const Home = () => {
           Book a Visit
         </Link>
       </div>
-
       {/* Featured Drinks */}
       <h1 className="text-2xl font-fredoka font-bold text-light-pink mt-8">
         Featured Drinks
       </h1>
-
       <div className="mt-6">
         {/* Drink Cards with Left/Right Navigation */}
         <div className="relative w-full max-w-3xl mx-auto flex items-center">
@@ -144,7 +143,6 @@ const Home = () => {
           </button>
         </div>
       </div>
-
       {/* View Menu Btn */}
       <div className="mt-10">
         <Link
@@ -154,7 +152,6 @@ const Home = () => {
           View Menu
         </Link>
       </div>
-
       {/* About section */}
       <div className="mt-12 text-2xl font-fredoka font-bold text-light-pink pb-10">
         <h2 className="">About Bobakitty Café</h2>
@@ -177,7 +174,6 @@ const Home = () => {
           />
         </div>
       </div>
-
       {/* Read More Btn */}
       <div className="pb-8">
         <Link
