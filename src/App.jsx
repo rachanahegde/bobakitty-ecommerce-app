@@ -16,10 +16,16 @@ import ShoppingCart from "./components/ShoppingCart"; // Import ShoppingCart com
 import "./index.css";
 
 // Component to conditionally render Navbar
-const Layout = ({ children, isCartOpen, setIsCartOpen, isCheckoutPage }) => {
+const Layout = ({
+  children,
+  isCartOpen,
+  setIsCartOpen,
+  isCheckoutPage,
+  cart,
+}) => {
   return (
     <div className="min-h-screen bg-dark-purple">
-      {!isCheckoutPage && <Navbar setIsCartOpen={setIsCartOpen} />}
+      {!isCheckoutPage && <Navbar setIsCartOpen={setIsCartOpen} cart={cart} />}
       {children}
       {!isCheckoutPage && <Footer />}
     </div>
@@ -45,7 +51,7 @@ function App() {
 
 // New component inside Router to fix useLocation issue
 const AppContent = ({ cart, setCart, isCartOpen, setIsCartOpen }) => {
-  const location = useLocation(); // ✅ Now inside <Router>, so no error
+  const location = useLocation();
   const isCheckoutPage = location.pathname === "/checkout"; // Check if on checkout
 
   return (
@@ -53,6 +59,7 @@ const AppContent = ({ cart, setCart, isCartOpen, setIsCartOpen }) => {
       isCartOpen={isCartOpen}
       setIsCartOpen={setIsCartOpen}
       isCheckoutPage={isCheckoutPage}
+      cart={cart}
     >
       <Routes>
         <Route path="/" element={<Home />} />
