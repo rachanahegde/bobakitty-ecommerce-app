@@ -7,8 +7,8 @@ A bubble tea kitty café eCommerce website built with React with Vite, Tailwind,
 
 <img width="855" alt="Screenshot 2025-03-13 at 7 36 34 PM" src="https://github.com/user-attachments/assets/6fb39f92-cb7f-446b-82ee-bb6b6ca7627e" />
 
-<img width="850" alt="Screenshot 2025-03-21 at 6 06 29 PM" src="https://github.com/user-attachments/assets/71536e6a-2bd9-4dad-bcdb-db64acf76d9c" />
-
 <img width="850" alt="Screenshot 2025-03-21 at 6 06 02 PM" src="https://github.com/user-attachments/assets/92042393-ac27-43ad-8abb-baabc5338b28" />
 
 <img width="850" alt="Screenshot 2025-03-21 at 6 06 14 PM" src="https://github.com/user-attachments/assets/18752300-b2d0-41f3-ac36-cfcc443ce511" />
+
+<img width="850" alt="Screenshot 2025-03-21 at 6 06 29 PM" src="https://github.com/user-attachments/assets/71536e6a-2bd9-4dad-bcdb-db64acf76d9c" />
