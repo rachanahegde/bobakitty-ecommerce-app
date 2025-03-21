@@ -1,5 +1,3 @@
-import emptyCartIcon from "../assets/icons/empty_cart.png";
-import fullCartIcon from "../assets/icons/full_cart.png";
 import { Link } from "react-router-dom"; // Import Link for navigation
 
 const ShoppingCart = ({ cart, setCart, isCartOpen, setIsCartOpen }) => {
