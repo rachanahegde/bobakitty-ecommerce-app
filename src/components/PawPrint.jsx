@@ -9,7 +9,7 @@ const PawPrint = () => {
       <Motion.img
         src={pawPrintRight}
         alt="Paw print"
-        className="absolute top-4 left-275 w-8 h-8 rotate-40 animate-bounce"
+        className="absolute top-2 left-90 w-5 h-5 sm:top-4 sm:left-275 sm:w-8 sm:h-8 rotate-40 animate-bounce"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2 }}
