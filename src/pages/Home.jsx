@@ -98,13 +98,13 @@ const Home = () => {
       <div className="mt-10 md:mt-8 flex flex-row justify-center gap-6">
         <Link
           to="/shop"
-          className="px-6 py-3 bg-gradient-to-r from-light-pink to-medium-pink text-dark-purple font-montserrat font-bold text-sm rounded-full shadow-md hover:scale-105 transition-transform"
+          className="px-4 py-2 md:px-6 md:py-3 bg-gradient-to-r from-light-pink to-medium-pink text-dark-purple font-montserrat font-bold text-xs md:text-sm rounded-full shadow-md hover:scale-105 transition-transform"
         >
           Shop Now
         </Link>
         <Link
           to="/contact"
-          className="px-6 py-3 bg-gradient-to-r from-light-purple to-medium-purple text-dark-purple font-montserrat font-bold text-sm rounded-full shadow-md hover:scale-105 transition-transform"
+          className="px-4 py-2 md:px-6 md:py-3 bg-gradient-to-r from-light-purple to-medium-purple text-dark-purple font-montserrat font-bold text-xs md:text-sm rounded-full shadow-md hover:scale-105 transition-transform"
         >
           Book a Visit
         </Link>
@@ -127,7 +127,7 @@ const Home = () => {
           </button>
 
           {/* Drinks Grid */}
-          <div className="grid grid-cols-3 gap-6 lg:gap-8 w-full">
+          <div className="grid grid-cols-3 gap-4 md:gap-6 lg:gap-8 w-full">
             {drinks.slice(currentIndex, currentIndex + 3).map((drink) => (
               <div
                 key={drink.id}
@@ -159,15 +159,16 @@ const Home = () => {
       <div className="mt-10">
         <Link
           to="/menu"
-          className="px-6 py-3 bg-gradient-to-r from-light-pink to-medium-pink text-dark-purple font-montserrat font-bold text-sm rounded-full shadow-md hover:scale-105 transition-transform"
+          className="px-4 py-2 md:px-6 md:py-3 bg-gradient-to-r from-light-pink to-medium-pink text-dark-purple font-montserrat font-bold text-xs md:text-sm rounded-full shadow-md hover:scale-105 transition-transform"
         >
           View Menu
         </Link>
       </div>
+
       {/* About section */}
       <div className="mt-12 text-2xl font-fredoka font-bold text-light-pink pb-10">
         <h2 className="">About Bobakitty Café</h2>
-        <div className="mt-6 w-3xl mx-auto items-center bg-white/25 backdrop-blur-lg shadow-lg pt-8 pr-6 pl-6 pb-6 rounded-xl">
+        <div className="mt-6 w-xs md:w-2xl lg:w-3xl mx-auto items-center bg-white/25 backdrop-blur-lg shadow-lg px-4 py-4 md:pt-8 md:px-6 md:pb-6 rounded-xl">
           <p className="text-sm font-montserrat text-light-purple leading-6">
             Welcome to BobaKitty Café - where bubble tea meets whiskers and
             warmth! Sip on handcrafted boba, cuddle with our friendly rescue
@@ -181,7 +182,7 @@ const Home = () => {
           </p>
           <img
             src={cartoon_boba_kitty}
-            className="absolute bottom-27 left-173 w-50"
+            className="absolute bottom-100 left-78 md:bottom-68 md:left-158 lg:bottom-50 lg:left-258 w-20 md:w-35 lg:w-50"
             alt="Cat drinking bubble tea"
           />
         </div>
@@ -190,7 +191,7 @@ const Home = () => {
       <div className="pb-8">
         <Link
           to="/contact"
-          className="px-6 py-3 bg-gradient-to-r from-light-purple to-medium-purple text-dark-purple font-montserrat font-bold text-sm rounded-full shadow-md hover:scale-105 transition-transform"
+          className="px-4 py-2 md:px-6 md:py-3 bg-gradient-to-r from-light-purple to-medium-purple text-dark-purple font-montserrat font-bold text-xs md:text-sm rounded-full shadow-md hover:scale-105 transition-transform"
         >
           Read More
         </Link>
