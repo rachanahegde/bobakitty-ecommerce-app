@@ -9,7 +9,7 @@ const PawPrint = () => {
       <Motion.img
         src={pawPrintRight}
         alt="Paw print"
-        className="absolute top-2 left-90 w-5 h-5 sm:top-4 sm:left-275 sm:w-8 sm:h-8 rotate-40 animate-bounce"
+        className="absolute hidden xl:block lg:top-4 lg:left-272 lg:w-8 lg:h-8 rotate-40 animate-bounce"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2 }}
@@ -17,7 +17,7 @@ const PawPrint = () => {
       <Motion.img
         src={pawPrintDown}
         alt="Paw print"
-        className="absolute top-30 left-290 w-8 h-8 animate-bounce"
+        className="absolute hidden xl:block lg:top-30 lg:left-290 lg:w-8 lg:h-8 animate-bounce"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 3 }}
@@ -25,7 +25,7 @@ const PawPrint = () => {
       <Motion.img
         src={pawPrintDown}
         alt="Paw print"
-        className="absolute top-55 left-290 w-8 h-8 animate-bounce"
+        className="absolute hidden xl:block lg:top-55 lg:left-290 w-8 h-8 animate-bounce"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 4 }}
@@ -33,7 +33,7 @@ const PawPrint = () => {
       <Motion.img
         src={pawPrintDown}
         alt="Paw print"
-        className="absolute top-80 left-290 w-8 h-8 animate-bounce"
+        className="absolute hidden xl:block lg:top-80 lg:left-290 w-8 h-8 animate-bounce"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 5 }}
@@ -41,7 +41,7 @@ const PawPrint = () => {
       <Motion.img
         src={pawPrintDown}
         alt="Paw print"
-        className="absolute top-105 left-290 w-8 h-8 rotate-30 animate-bounce"
+        className="absolute hidden xl:block top-105 left-290 w-8 h-8 rotate-30 animate-bounce"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 6 }}
@@ -49,7 +49,7 @@ const PawPrint = () => {
       <Motion.img
         src={pawPrintRight}
         alt="Paw print"
-        className="absolute top-125 left-280 w-8 h-8 rotate-150 animate-bounce"
+        className="absolute hidden xl:block top-128 left-280 w-8 h-8 rotate-150 animate-bounce"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 7 }}
@@ -57,7 +57,7 @@ const PawPrint = () => {
       <Motion.img
         src={pawPrintRight}
         alt="Paw print"
-        className="absolute top-125 left-255 w-8 h-8 rotate-180 animate-bounce"
+        className="absolute hidden xl:block top-128 left-255 w-8 h-8 rotate-180 animate-bounce"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 8 }}
@@ -65,7 +65,7 @@ const PawPrint = () => {
       <Motion.img
         src={pawPrintRight}
         alt="Paw print"
-        className="absolute top-125 left-230 w-8 h-8 rotate-180 animate-bounce"
+        className="absolute hidden xl:block top-128 left-230 w-8 h-8 rotate-180 animate-bounce"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 9 }}
@@ -73,7 +73,7 @@ const PawPrint = () => {
       <Motion.img
         src={pawPrintRight}
         alt="Paw print"
-        className="absolute top-125 left-115 w-8 h-8 rotate-180 animate-bounce"
+        className="absolute hidden xl:block top-128 left-115 w-8 h-8 rotate-180 animate-bounce"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 10 }}
@@ -81,7 +81,7 @@ const PawPrint = () => {
       <Motion.img
         src={pawPrintRight}
         alt="Paw print"
-        className="absolute top-125 left-90 w-8 h-8 rotate-180 animate-bounce"
+        className="absolute hidden xl:block top-130 left-90 w-8 h-8 rotate-180 animate-bounce"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 11 }}
@@ -89,7 +89,7 @@ const PawPrint = () => {
       <Motion.img
         src={pawPrintRight}
         alt="Paw print"
-        className="absolute top-135 left-65 w-8 h-8 rotate-150 animate-bounce"
+        className="absolute hidden xl:block top-138 left-65 w-8 h-8 rotate-150 animate-bounce"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 12 }}
@@ -97,7 +97,7 @@ const PawPrint = () => {
       <Motion.img
         src={pawPrintRight}
         alt="Paw print"
-        className="absolute top-165 left-50 w-8 h-8 rotate-100 animate-bounce"
+        className="absolute hidden xl:block top-165 left-50 w-8 h-8 rotate-100 animate-bounce"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 13 }}
@@ -105,7 +105,7 @@ const PawPrint = () => {
       <Motion.img
         src={pawPrintDown}
         alt="Paw print"
-        className="absolute top-200 left-50 w-8 h-8 animate-bounce"
+        className="absolute hidden xl:block top-200 left-50 w-8 h-8 animate-bounce"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 14 }}
@@ -113,7 +113,7 @@ const PawPrint = () => {
       <Motion.img
         src={pawPrintDown}
         alt="Paw print"
-        className="absolute top-235 left-60 w-8 h-8 rotate-300 animate-bounce"
+        className="absolute hidden xl:block top-235 left-60 w-8 h-8 rotate-300 animate-bounce"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 15 }}
@@ -121,7 +121,7 @@ const PawPrint = () => {
       <Motion.img
         src={pawPrintRight}
         alt="Paw print"
-        className="absolute top-235 left-90 w-8 h-8 animate-bounce"
+        className="absolute hidden xl:block top-240 left-90 w-8 h-8 animate-bounce"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 16 }}
@@ -129,7 +129,7 @@ const PawPrint = () => {
       <Motion.img
         src={pawPrintRight}
         alt="Paw print"
-        className="absolute top-235 left-125 w-8 h-8 animate-bounce"
+        className="absolute hidden xl:block top-240 left-125 w-8 h-8 animate-bounce"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 17 }}
@@ -137,7 +137,7 @@ const PawPrint = () => {
       <Motion.img
         src={pawPrintRight}
         alt="Paw print"
-        className="absolute top-235 left-210 w-8 h-8 animate-bounce"
+        className="absolute hidden xl:block top-240 left-210 w-8 h-8 animate-bounce"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 18 }}
@@ -145,7 +145,7 @@ const PawPrint = () => {
       <Motion.img
         src={pawPrintRight}
         alt="Paw print"
-        className="absolute top-237 left-240 rotate-25 w-8 h-8 animate-bounce"
+        className="absolute hidden xl:block top-244 left-240 rotate-25 w-8 h-8 animate-bounce"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 19 }}
