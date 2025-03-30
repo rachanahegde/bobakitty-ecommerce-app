@@ -59,10 +59,11 @@ const Home = () => {
   };
 
   return (
-    <div className="mt-6 text-center relative">
+    <div className="mt-6 text-center relative w-full h-full">
       <h1 className="text-md sm:text-2xl font-fredoka font-bold text-light-pink max-w-2xs mx-auto sm:max-w-3xl md:max-w-xl">
         Sip, Purr, Relax: The Ultimate Bubble Tea & Cat Café Experience!
       </h1>
+      {/* TODO check which screen sizes this renders OK on */}
       {/* Animated paw prints */}
       <PawPrint />
 
@@ -168,25 +169,30 @@ const Home = () => {
       {/* About section */}
       <div className="mt-12 text-2xl font-fredoka font-bold text-light-pink pb-10">
         <h2 className="">About Bobakitty Café</h2>
-        <div className="mt-6 w-xs md:w-2xl lg:w-3xl mx-auto items-center bg-white/25 backdrop-blur-lg shadow-lg px-4 py-4 md:pt-8 md:px-6 md:pb-6 rounded-xl">
-          <p className="text-sm font-montserrat text-light-purple leading-6">
-            Welcome to BobaKitty Café - where bubble tea meets whiskers and
-            warmth! Sip on handcrafted boba, cuddle with our friendly rescue
-            cats, and browse our adorable feline-themed merch in a cozy,
-            purr-fectly relaxing space.
-          </p>
-          <p className="text-sm font-montserrat mt-4 text-light-purple leading-6">
-            We proudly partner with local cat adoption organizations to help our
-            furry friends find loving homes. Come for the boba, stay for the
-            cuddles - and maybe even find your new best friend!
-          </p>
-          <img
-            src={cartoon_boba_kitty}
-            className="absolute bottom-100 left-78 md:bottom-68 md:left-158 lg:bottom-50 lg:left-258 w-20 md:w-35 lg:w-50"
-            alt="Cat drinking bubble tea"
-          />
+        <div className="mt-6 flex flex-col sm:flex-row sm:grid-rows-2 md:space-x-6 w-xs md:w-2xl lg:w-4xl mx-auto items-center bg-white/25 backdrop-blur-lg shadow-lg px-4 py-4 md:pt-8 md:px-6 md:pb-6 rounded-xl">
+          <div className="">
+            <p className="text-sm font-montserrat text-light-purple leading-6">
+              Welcome to BobaKitty Café - where bubble tea meets whiskers and
+              warmth! Sip on handcrafted boba, cuddle with our friendly rescue
+              cats, and browse our adorable feline-themed merch in a cozy,
+              purr-fectly relaxing space.
+            </p>
+            <p className="text-sm font-montserrat mt-4 text-light-purple leading-6">
+              We proudly partner with local cat adoption organizations to help
+              our furry friends find loving homes. Come for the boba, stay for
+              the cuddles - and maybe even find your new best friend!
+            </p>
+          </div>
+          <div className="md:w-80">
+            <img
+              src={cartoon_boba_kitty}
+              className="w-40 h-40"
+              alt="Cat drinking bubble tea"
+            />
+          </div>
         </div>
       </div>
+
       {/* Read More Btn */}
       <div className="pb-8">
         <Link
