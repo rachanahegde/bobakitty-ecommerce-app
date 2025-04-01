@@ -1,5 +1,5 @@
 # Ecommerce Website for Bubble Tea & Cat Café
-A bubble tea kitty café eCommerce website built with React with Vite, Tailwind, MySQL, and Node. Features include responsive layout; product listings, shopping cart, and checkout process; and user account functionality with authentication. The site is integrated with a database and an AI-powered chatbot offers personalized drink recommendations.
+A bubble tea kitty café eCommerce website built with React with Vite, Tailwind, MySQL, and Node. Features include responsive layout; product listings, shopping cart, and checkout process; and user account functionality with authentication. 
 
 ## Tech Stack
 
@@ -13,3 +13,5 @@ A bubble tea kitty café eCommerce website built with React with Vite, Tailwind,
 ## Mobile Screenshots
 
 # Future Work Checklist
+- Add a database
+- Add an AI-powered chatbot that offers personalized bubble tea drink recommendations.
