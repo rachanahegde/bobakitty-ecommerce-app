@@ -2,7 +2,6 @@
 // Shipping Address, Billing Address (if different from shipping), Selected Shipping Method, Payment Method (last 4 digits of the card), Order Summary (Cart Items, Subtotal, Shipping, Taxes, and Total), Final Confirmation Button
 
 import angleLeft from "../assets/icons/angle-left.png";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const CheckoutReview = ({
@@ -139,12 +138,12 @@ const CheckoutReview = ({
       </div>
 
       {/* Navigation Buttons */}
-      <div className="flex justify-between mt-6">
+      <div className="flex justify-between mt-6 space-x-4 md:space-x-0">
         <div className="flex items-center space-x-1">
-          <img src={angleLeft} className="w-[30px]" alt="" />
+          <img src={angleLeft} className="w-[24px] md:w-[30px]" alt="" />
           <button
             onClick={() => setStep(3)}
-            className="text-dark-purple text-md font-semibold font-montserrat cursor-pointer"
+            className="text-dark-purple text-sm md:text-md font-semibold font-montserrat cursor-pointer"
           >
             Return to Payment
           </button>
@@ -152,7 +151,7 @@ const CheckoutReview = ({
 
         <button
           onClick={handlePlaceOrder} // Call function instead of using navigate directly in onClick
-          className="text-center font-montserrat bg-light-pink text-white py-3 text-md font-bold rounded-md hover:bg-medium-pink transition px-4"
+          className="text-center font-montserrat bg-light-pink text-white py-3 text-sm md:text-md font-bold rounded-md hover:bg-medium-pink transition px-2 md:px-4"
         >
           Place Order
         </button>

@@ -140,7 +140,7 @@ const CheckoutInformation = ({
         <button
           onClick={() => isFormValid() && setStep(2)}
           disabled={!isFormValid()}
-          className={`text-center font-montserrat py-3 text-md font-bold rounded-md transition px-4 ${
+          className={`text-center font-montserrat py-3 text-sm md:text-md font-bold rounded-md transition px-4 ${
             isFormValid()
               ? "bg-light-pink text-white hover:bg-medium-pink"
               : "bg-gray-300 text-gray-500 cursor-not-allowed"

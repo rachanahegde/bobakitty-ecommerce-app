@@ -2,7 +2,6 @@
 // Displays email and shipping address summary.
 // Allows users to select a shipping method.
 
-import { Link } from "react-router-dom";
 import angleLeft from "../assets/icons/angle-left.png";
 
 const CheckoutShipping = ({
@@ -40,7 +39,7 @@ const CheckoutShipping = ({
         </p>
       </div>
 
-      <h1 className="text-xl text-dark-purple font-semibold font-montserrat">
+      <h1 className="text-lg md:text-xl text-dark-purple font-semibold font-montserrat">
         Shipping is free over £20
       </h1>
 
@@ -68,12 +67,12 @@ const CheckoutShipping = ({
         ))}
       </div>
 
-      <div className="flex justify-between">
-        <div className="flex items-center space-x-1">
-          <img src={angleLeft} className="w-[30px]" alt="" />
+      <div className="flex justify-between space-x-8 md:space-x-0">
+        <div className="flex items-center md:space-x-1">
+          <img src={angleLeft} className="w-[24px] md:w-[30px]" alt="" />
           <button
             onClick={() => setStep(1)}
-            className="text-dark-purple text-md font-semibold font-montserrat cursor-pointer"
+            className="text-dark-purple text-sm md:text-md font-semibold font-montserrat cursor-pointer"
           >
             Return to Information
           </button>
@@ -81,7 +80,7 @@ const CheckoutShipping = ({
 
         <button
           onClick={() => setStep(3)}
-          className="text-center font-montserrat bg-light-pink text-white py-3 text-md font-bold rounded-md hover:bg-medium-pink transition px-4"
+          className="text-center font-montserrat bg-light-pink text-white py-2 md:py-3 text-sm md:text-md font-bold rounded-md hover:bg-medium-pink transition md:px-4"
         >
           Continue to Payment
         </button>

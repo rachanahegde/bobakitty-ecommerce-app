@@ -1,5 +1,3 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
 import visaIcon from "../assets/icons/visa.png";
 import amexIcon from "../assets/icons/amex.png";
 import mastercardIcon from "../assets/icons/mastercard.png";
@@ -35,13 +33,13 @@ const CheckoutPayment = ({
 
       <div className="space-y-4 border-b pb-4">
         <div className="flex flex-row space-x-4">
-          <p className="text-md font-montserrat font-bold text-dark-purple w-[150px]">
+          <p className="text-md font-montserrat font-bold text-dark-purple w-31 md:w-[150px]">
             Contact
           </p>
           <p className="text-md font-montserrat">{email}</p>
         </div>
         <div className="flex flex-row space-x-8">
-          <p className="text-md font-montserrat font-bold text-dark-purple w-[200px]">
+          <p className="text-md font-montserrat font-bold text-dark-purple w-27 md:w-[200px]">
             Ship to
           </p>
           <p className="text-md font-montserrat">
@@ -79,7 +77,7 @@ const CheckoutPayment = ({
           placeholder="Card Number"
           value={paymentDetails.cardNumber}
           onChange={handlePaymentChange}
-          className="w-full border border-gray-300 rounded-md p-3 font-montserrat"
+          className="w-full border border-gray-300 rounded-md p-3 font-montserrat text-sm md:text-md"
         />
         <div className="grid grid-cols-2 gap-4 mt-4">
           <input
@@ -88,7 +86,7 @@ const CheckoutPayment = ({
             placeholder="Expiration Date (MM/YY)"
             value={paymentDetails.expiryDate}
             onChange={handlePaymentChange}
-            className="w-full border border-gray-300 rounded-md p-3 font-montserrat"
+            className="w-full border border-gray-300 rounded-md p-3 font-montserrat text-sm md:text-md"
           />
           <input
             type="text"
@@ -96,7 +94,7 @@ const CheckoutPayment = ({
             placeholder="Security Code"
             value={paymentDetails.securityCode}
             onChange={handlePaymentChange}
-            className="w-full border border-gray-300 rounded-md p-3 font-montserrat"
+            className="w-full border border-gray-300 rounded-md p-3 font-montserrat text-sm md:text-md"
           />
         </div>
         <input
@@ -105,18 +103,18 @@ const CheckoutPayment = ({
           placeholder="Name on Card"
           value={paymentDetails.cardName}
           onChange={handlePaymentChange}
-          className="w-full border border-gray-300 rounded-md p-3 font-montserrat mt-4"
+          className="w-full border border-gray-300 rounded-md p-3 font-montserrat mt-4 text-sm md:text-md"
         />
       </div>
 
       <h1 className="text-xl font-montserrat font-bold text-dark-purple">
         Billing Address
       </h1>
-      <p className="text-sm text-gray-500">
+      <p className="text-sm text-gray-500 font-montserrat">
         Select the address that matches your card or payment method.
       </p>
       <div className="space-y-2">
-        <label className="flex items-center">
+        <label className="flex items-center font-montserrat font-semibold">
           <input
             type="radio"
             name="billingAddressOption"
@@ -167,12 +165,12 @@ const CheckoutPayment = ({
         </div>
       )}
 
-      <div className="flex justify-between mt-6">
-        <div className="flex items-center space-x-1">
-          <img src={angleLeft} className="w-[30px]" alt="" />
+      <div className="flex justify-between space-x-8 md:space-x-0">
+        <div className="flex items-center md:space-x-1">
+          <img src={angleLeft} className="w-[24px] md:w-[30px]" alt="" />
           <button
             onClick={() => setStep(2)}
-            className="text-dark-purple text-md font-semibold font-montserrat cursor-pointer"
+            className="text-dark-purple text-sm md:text-md font-semibold font-montserrat cursor-pointer"
           >
             Return to Shipping
           </button>
@@ -180,7 +178,7 @@ const CheckoutPayment = ({
 
         <button
           onClick={() => setStep(4)}
-          className="text-center font-montserrat bg-light-pink text-white py-3 text-md font-bold rounded-md hover:bg-medium-pink transition px-4"
+          className="text-center font-montserrat bg-light-pink px-2 text-white py-2 md:py-3 text-sm md:text-md font-bold rounded-md hover:bg-medium-pink transition md:px-4"
         >
           Review Order
         </button>
