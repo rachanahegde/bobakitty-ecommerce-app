@@ -17,13 +17,18 @@ const CheckoutReview = ({
   tax,
   total,
   setStep,
+  setCart,
+  setIsCartOpen,
 }) => {
   const navigate = useNavigate(); // ✅ Declare useNavigate at the top
 
   // Function to handle order placement
   const handlePlaceOrder = () => {
+    setCart([]); // Clear cart
+    setIsCartOpen(false); // Close cart
     navigate("/"); // Redirects to Home Page
   };
+
   return (
     <div className="space-y-6">
       <h1 className="text-3xl font-pacifico text-light-pink">Bobakitty Café</h1>

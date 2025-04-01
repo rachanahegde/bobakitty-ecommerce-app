@@ -15,7 +15,9 @@ const CheckoutShipping = ({
 }) => {
   return (
     <div className="space-y-6">
-      <h1 className="text-3xl font-pacifico text-light-pink">Bobakitty Café</h1>
+      <h1 className="text-2xl lg:text-3xl font-pacifico text-light-pink">
+        Bobakitty Café
+      </h1>
       <p className="text-lg font-montserrat text-gray-500">
         Customer &gt;{" "}
         <span className="font-bold text-dark-purple">Shipping</span> &gt;

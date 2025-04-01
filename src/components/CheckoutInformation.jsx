@@ -29,12 +29,14 @@ const CheckoutInformation = ({
 
   return (
     <div className="space-y-6">
-      <h1 className="text-3xl font-pacifico text-light-pink">Bobakitty Café</h1>
+      <h1 className="text-2xl lg:text-3xl font-pacifico text-light-pink">
+        Bobakitty Café
+      </h1>
       <p className="text-lg font-montserrat text-gray-500">
         <span className="font-bold text-dark-purple">Customer</span> &gt;
         Shipping &gt; Payment &gt; Review
       </p>
-      <h1 className="text-xl font-montserrat font-bold text-dark-purple">
+      <h1 className="text-lg lg:text-xl font-montserrat font-bold text-dark-purple">
         Contact
       </h1>
       <input
@@ -44,7 +46,7 @@ const CheckoutInformation = ({
         onChange={(e) => setEmail(e.target.value)}
         className="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-light-pink font-montserrat"
       />
-      <h1 className="text-xl font-montserrat font-bold text-dark-purple">
+      <h1 className="text-lg lg:text-xl font-montserrat font-bold text-dark-purple">
         Shipping Address
       </h1>
       <div className="grid grid-cols-1 gap-y-4 font-montserrat">
@@ -122,13 +124,13 @@ const CheckoutInformation = ({
         className="w-full border border-gray-300 rounded-md p-3 font-montserrat"
       />
 
-      <div className="flex flex-row gap-x-36">
+      <div className="flex flex-row gap-x-20 md:gap-x-36">
         {/* Return to shop link */}
         <div className="flex items-center space-x-1">
-          <img src={angleLeft} className="w-[30px]" alt="" />
+          <img src={angleLeft} className="w-[24px] md:w-[30px]" alt="" />
           <Link
             to="/shop"
-            className="text-dark-purple text-md font-semibold font-montserrat"
+            className="text-dark-purple text-sm md:text-md font-semibold font-montserrat"
           >
             Return to Shop
           </Link>

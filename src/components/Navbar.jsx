@@ -65,11 +65,28 @@ const Navbar = ({ setIsCartOpen, cart }) => {
           )}
         </div>
 
-        {/* Hamburger (Mobile) */}
-        <div className="md:hidden">
+        {/* Hamburger Icon + Shopping Cart for Mobile */}
+        <div className="md:hidden flex flex-row grid-rows-2 space-x-4">
           <button onClick={toggleMenu}>
             <img src={hamburgerIcon} alt="Menu" className="w-6 h-6" />
           </button>
+
+          {isShopPage && (
+            <button
+              onClick={() => setIsCartOpen(true)}
+              className="flex items-center space-x-2 text-light-purple font-montserrat font-semibold hover:text-medium-pink"
+            >
+              <div className="relative">
+                <img src={cartIcon} alt="Cart" className="w-5 h-5" />
+                {totalItems > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-medium-pink text-white text-xs w-5 h-5 flex items-center justify-center rounded-full font-bold">
+                    {totalItems}
+                  </span>
+                )}
+              </div>
+              <span>Cart</span>
+            </button>
+          )}
         </div>
       </div>
 
@@ -80,8 +97,10 @@ const Navbar = ({ setIsCartOpen, cart }) => {
         } md:hidden flex flex-col`}
       >
         {/* Mobile Menu Header with Close Button */}
-        <div className="flex items-center px-6 py-4 border-b shadow-md mx-auto">
-          <span className="text-xl font-pacifico text-light-pink">Menu</span>
+        <div className="flex items-center px-6 py-4 mx-auto">
+          <span className="text-xl font-pacifico text-light-pink">
+            Navigation
+          </span>
           <button
             onClick={toggleMenu}
             className="text-lg font-bold text-light-purple absolute right-8"
@@ -116,19 +135,6 @@ const Navbar = ({ setIsCartOpen, cart }) => {
           >
             Contact
           </Link>
-
-          {isShopPage && (
-            <button
-              onClick={() => {
-                setIsCartOpen(true);
-                closeMenu();
-              }}
-              className="flex items-center space-x-2 hover:text-medium-pink"
-            >
-              <img src={cartIcon} alt="Cart" className="w-5 h-5" />
-              <span>Cart ({totalItems})</span>
-            </button>
-          )}
         </div>
       </div>
 

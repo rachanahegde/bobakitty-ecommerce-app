@@ -123,7 +123,7 @@ const ShoppingCart = ({ cart, setCart, isCartOpen, setIsCartOpen }) => {
             {/* Link to Checkout Page */}
             <Link
               to="/checkout"
-              className="block text-center w-full bg-white text-dark-purple py-3 text-md font-extrabold rounded-3xl font-montserrat uppercase hover:bg-medium-pink mt-4"
+              className="block text-center w-2xs mx-auto md:w-full bg-white text-dark-purple py-3 text-md font-extrabold rounded-3xl font-montserrat uppercase hover:bg-medium-pink mt-4"
             >
               Go to Checkout
             </Link>
