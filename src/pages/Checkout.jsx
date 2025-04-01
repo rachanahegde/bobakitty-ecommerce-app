@@ -5,7 +5,7 @@ import CheckoutPayment from "../components/CheckoutPayment";
 import OrderSummary from "../components/OrderSummary";
 import CheckoutReview from "../components/CheckoutReview";
 
-const Checkout = ({ cart }) => {
+const Checkout = ({ cart, setCart, setIsCartOpen }) => {
   const [step, setStep] = useState(1); // 1 = Information, 2 = Shipping, 3 = Payment, 4 = Review
   const [email, setEmail] = useState("");
   const [shippingInfo, setShippingInfo] = useState({
@@ -134,6 +134,8 @@ const Checkout = ({ cart }) => {
             tax={tax}
             total={total}
             setStep={setStep}
+            setCart={setCart} // Reset cart after order is placed
+            setIsCartOpen={setIsCartOpen} // Close cart after order is placed
           />
         )}
         {/* Show Order Summary only if NOT on the Review Page */}

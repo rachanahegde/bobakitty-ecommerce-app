@@ -29,13 +29,16 @@ const Contact = () => {
   };
   return (
     <div className="mt-6 text-center">
-      <h1 className="text-2xl font-fredoka font-bold text-light-pink mb-8">
+      <h1 className="text-xl md:text-2xl font-fredoka font-bold text-light-pink mb-8">
         Contact Us
       </h1>
-      <div className="flex flex-cols-2 gap-x-10 max-w-5xl mx-auto mb-10">
-        <img src={catPettedImg} className="w-2xs rounded-md shadow-md"></img>
+      <div className="flex flex-col md:flex-row justify-center items-center gap-10 w-full max-w-5xl mx-auto mb-10">
+        <img
+          src={catPettedImg}
+          className="w-[260px] md:w-4xs xl:w-2xs rounded-md shadow-md"
+        ></img>
         {/* Contact Us Form */}
-        <div>
+        <div className="w-[260px] md:w-sm xl:w-2xl">
           {!submitted ? (
             <form
               onSubmit={handleSubmit}
@@ -96,21 +99,23 @@ const Contact = () => {
         </div>
       </div>
 
-      <h1 className="text-2xl font-fredoka font-bold text-light-purple mb-8">
+      <h1 className="text-xl md:text-2xl font-fredoka font-bold text-light-purple mb-8">
         Visit Us
       </h1>
-      <h2 className="text-lg font-montserrat font-semibold text-light-purple mb-4">
-        Phone Number: (123) 456-7890
-      </h2>
-      <h2 className="text-lg font-montserrat font-semibold text-light-purple mb-4">
-        Address: 123 Whisker Lane, Meowtown, CA 90210
-      </h2>
-      <h2 className="text-lg font-montserrat font-semibold text-light-purple mb-12">
-        Business Hours: Mon-Sun: 10 AM - 8 PM
-      </h2>
+      <div className="w-[260px] md:w-full mx-auto">
+        <h2 className="text-lg font-montserrat font-semibold text-light-purple mb-4">
+          Phone Number: (123) 456-7890
+        </h2>
+        <h2 className="text-lg font-montserrat font-semibold text-light-purple mb-4">
+          Address: 123 Whisker Lane, Meowtown, CA 90210
+        </h2>
+        <h2 className="text-lg font-montserrat font-semibold text-light-purple mb-12">
+          Business Hours: Mon-Sun: 10 AM - 8 PM
+        </h2>
+      </div>
       <img
         src={catCuddlesImg}
-        className="w-2xl mx-auto mb-14 rounded-md shadow-md"
+        className="w-[260px] md:w-2xl xl:w-4xl mx-auto mb-14 rounded-md shadow-md"
       ></img>
     </div>
   );

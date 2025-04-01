@@ -43,7 +43,7 @@ const allDrinks = {
     },
     {
       id: 14,
-      name: "Chocolate Milk Tea",
+      name: "Chocolate Milk",
       image: drink14,
       description:
         "A delightful fusion of chocolate and black tea, offering a velvety, cocoa-infused twist on classic milk tea. Perfect for chocolate lovers seeking a refreshing treat.",
@@ -147,7 +147,7 @@ const allDrinks = {
     },
     {
       id: 10,
-      name: "Lavender Honey Tea",
+      name: "Lavender Honey",
       image: drink10,
       description:
         "Floral lavender meets sweet honey in this calming iced tea. A soothing drink perfect for unwinding after a long day.",
@@ -161,7 +161,7 @@ const allDrinks = {
     },
     {
       id: 12,
-      name: "Orange Jasmine Tea",
+      name: "Orange Jasmine",
       image: drink12,
       description:
         "The fragrant floral notes of jasmine tea blend beautifully with juicy orange. This tea is light, aromatic, and bursting with citrusy goodness.",
@@ -178,7 +178,7 @@ const allDrinks = {
     },
     {
       id: 20,
-      name: "Brown Sugar Boba",
+      name: "Brown Sugar",
       image: drink20,
       description:
         "Caramelized brown sugar syrup swirls into fresh milk for a rich and indulgent treat. The warm, toasty sweetness pairs perfectly with chewy boba.",
@@ -199,7 +199,7 @@ const allDrinks = {
     },
     {
       id: 23,
-      name: "Strawberries & Cream Boba",
+      name: "Strawberry Boba",
       image: drink23,
       description:
         "Juicy strawberries are blended with creamy milk for a dreamy, dessert-like drink. A fruity and indulgent experience in every sip.",
@@ -213,20 +213,20 @@ const Menu = () => {
 
   return (
     <div className="relative mt-6 mb-10 text-center">
-      <h1 className="text-3xl font-fredoka font-bold text-light-pink">
+      <h1 className="text-xl md:text-3xl font-fredoka font-bold text-light-pink">
         Drinks Menu
       </h1>
-      <p className="text-xl font-montserrat font-semibold text-light-purple mt-8">
+      <p className="text-md md:text-xl font-montserrat font-semibold text-light-purple mt-8 mx-auto w-[340px] md:w-xl lg:w-4xl">
         From classic milk teas to fruity refreshers, explore our handcrafted
         drinks made with the finest ingredients!
       </p>
 
       {/* Drinks Category Filter */}
-      <div className="w-6xl mt-10 pb-6 pt-6 mx-auto bg-white/25 backdrop-blur-lg shadow-lg flex flex-row justify-center gap-x-12 rounded-xl">
+      <div className="w-xs md:w-2xl xl:w-4xl mt-10 mx-auto bg-white/25 backdrop-blur-lg shadow-lg flex flex-row gap-x-2 md:gap-x-4 lg:gap-x-23 justify-center rounded-xl items-center">
         {Object.keys(allDrinks).map((category) => (
           <p
             key={category}
-            className={`text-xl font-montserrat font-bold cursor-pointer px-4 py-2 rounded-lg transition-all ${
+            className={`text-xs md:text-xl font-montserrat font-bold cursor-pointer px-4 py-4 xl:py-6 rounded-lg transition-all ${
               selectedCategory === category
                 ? "bg-light-pink text-dark-purple shadow-md"
                 : "text-medium-pink hover:text-dark-purple"
@@ -239,7 +239,7 @@ const Menu = () => {
       </div>
 
       {/* Drinks Images and Names Grid */}
-      <div className="mt-12 grid grid-cols-3 gap-12 w-full max-w-4xl mx-auto">
+      <div className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 lg:gap-12 w-full max-w-xs md:max-w-2xl xl:max-w-4xl mx-auto">
         {allDrinks[selectedCategory].length > 0 ? (
           allDrinks[selectedCategory].map((drink) => (
             <div
@@ -250,9 +250,9 @@ const Menu = () => {
               <img
                 src={drink.image}
                 alt={drink.name}
-                className="w-45 h-45 rounded-lg object-cover shadow-md"
+                className="w-30 h-30 md:w-45 md:h-45 rounded-lg object-cover shadow-md"
               />
-              <p className="mt-6 mb-2 text-lg font-montserrat font-semibold text-light-purple">
+              <p className="mt-4 md:mt-6 md:mb-2 text-md md:text-lg font-montserrat font-semibold text-light-purple">
                 {drink.name}
               </p>
             </div>
