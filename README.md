@@ -24,19 +24,17 @@ I built this eCommerce website for a cat café where people can spend time petti
 
 # Website Screenshots
 ## Desktop Screenshots
-<img width="800" src="https://github.com/user-attachments/assets/63de2fed-7d20-4050-bde4-a1a61b723ab9" />
-<img width="800" src="https://github.com/user-attachments/assets/e9805593-0b9f-4426-a4ec-8a2a62b56d2a" />
-<img width="800" src="https://github.com/user-attachments/assets/dce0bf62-859b-4a16-8805-82768bc2a700" />
-<img width="800" src="https://github.com/user-attachments/assets/caf2c9d8-ed8a-4368-9b60-7270bea960fe" />
-<img width="800" src="https://github.com/user-attachments/assets/f3ea2084-7658-4abf-86c2-a07d6df05ebc" />
-
-<img width="800" src="https://github.com/user-attachments/assets/3782fb83-7771-4b80-a285-f3cfc7797a58" />
-<img width="800" src="https://github.com/user-attachments/assets/ee4b24ad-21fe-46f5-b480-a2baa1570ffb" />
-
-<img width="800" alt="desktop_checkout_1" src="https://github.com/user-attachments/assets/e4fb4a0b-f645-4bc9-9dfa-39588eeec748" />
-<img width="800" alt="desktop_checkout_2" src="https://github.com/user-attachments/assets/414d38ef-b4ac-4eda-8625-381c4e0af0ff" />
-<img width="800" alt="desktop_checkout_3" src="https://github.com/user-attachments/assets/681aa726-c032-4add-aa6c-7a223dc2f5b8" />
-<img width="613" alt="desktop_checkout_4" src="https://github.com/user-attachments/assets/23686d77-0b4a-4a29-a570-91dd123d5dd8" />
+<img width="500" src="https://github.com/user-attachments/assets/63de2fed-7d20-4050-bde4-a1a61b723ab9" />
+<img width="500" src="https://github.com/user-attachments/assets/e9805593-0b9f-4426-a4ec-8a2a62b56d2a" />
+<img width="500" src="https://github.com/user-attachments/assets/dce0bf62-859b-4a16-8805-82768bc2a700" />
+<img width="500" src="https://github.com/user-attachments/assets/caf2c9d8-ed8a-4368-9b60-7270bea960fe" />
+<img width="500" src="https://github.com/user-attachments/assets/f3ea2084-7658-4abf-86c2-a07d6df05ebc" />
+<img width="500" src="https://github.com/user-attachments/assets/3782fb83-7771-4b80-a285-f3cfc7797a58" />
+<img width="500" src="https://github.com/user-attachments/assets/ee4b24ad-21fe-46f5-b480-a2baa1570ffb" />
+<img width="500" alt="desktop_checkout_1" src="https://github.com/user-attachments/assets/e4fb4a0b-f645-4bc9-9dfa-39588eeec748" />
+<img width="500" alt="desktop_checkout_2" src="https://github.com/user-attachments/assets/414d38ef-b4ac-4eda-8625-381c4e0af0ff" />
+<img width="500" alt="desktop_checkout_3" src="https://github.com/user-attachments/assets/681aa726-c032-4add-aa6c-7a223dc2f5b8" />
+<img width="500" alt="desktop_checkout_4" src="https://github.com/user-attachments/assets/23686d77-0b4a-4a29-a570-91dd123d5dd8" />
 
 ## Tablet Screenshots
 
