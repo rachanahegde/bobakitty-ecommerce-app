@@ -24,6 +24,20 @@ I built this eCommerce website for a cat café where people can spend time petti
 
 # Website Screenshots
 ## Desktop Screenshots
+<img width="1000" src="https://github.com/user-attachments/assets/63de2fed-7d20-4050-bde4-a1a61b723ab9" />
+<img width="1000" src="https://github.com/user-attachments/assets/e9805593-0b9f-4426-a4ec-8a2a62b56d2a" />
+<img width="1000" src="https://github.com/user-attachments/assets/dce0bf62-859b-4a16-8805-82768bc2a700" />
+<img width="1000" src="https://github.com/user-attachments/assets/caf2c9d8-ed8a-4368-9b60-7270bea960fe" />
+<img width="1000" src="https://github.com/user-attachments/assets/f3ea2084-7658-4abf-86c2-a07d6df05ebc" />
+
+<img width="1000" src="https://github.com/user-attachments/assets/3782fb83-7771-4b80-a285-f3cfc7797a58" />
+<img width="1000" src="https://github.com/user-attachments/assets/ee4b24ad-21fe-46f5-b480-a2baa1570ffb" />
+
+<img width="1009" alt="desktop_checkout_1" src="https://github.com/user-attachments/assets/e4fb4a0b-f645-4bc9-9dfa-39588eeec748" />
+<img width="868" alt="desktop_checkout_2" src="https://github.com/user-attachments/assets/414d38ef-b4ac-4eda-8625-381c4e0af0ff" />
+<img width="868" alt="desktop_checkout_3" src="https://github.com/user-attachments/assets/681aa726-c032-4add-aa6c-7a223dc2f5b8" />
+<img width="613" alt="desktop_checkout_4" src="https://github.com/user-attachments/assets/23686d77-0b4a-4a29-a570-91dd123d5dd8" />
+
 
 ## Tablet Screenshots
 
@@ -46,18 +60,10 @@ The checkout process involves filling out a series of forms about customer detai
 
 The website is designed to be responsive using Tailwind CSS 4. The text and images adjust dynamically. The navigation menu also collapses into a hamburger menu on small screens.
 
-## Code snippets
-
-
 ## Challenges
-I had a lot of issues deploying this website using Vercel because there were problems with my folder structure - the current structure is one that works and I had to check on Stack Overflow to figure out that some files were not in the correct places. I also had to make sure my image paths in JSON files weren't linking to images inside the src folder becuase the images have to be in the public folder if you link to them using JSON. I didn't realise this would be an issue until I started getting errors on Vercels. There is also certain code that you need to add to the vite.config.js file in order to deploy with Vercel (you may check this file in my repo if you are curious) but it 
+I had a lot of issues deploying this website using Vercel. For instance, there were problems with my folder structure - the current structure is one that works and I had to check on Stack Overflow to figure out that some files were not in the correct places. I also had to make sure my image paths in JSON files weren't linking to images inside the src folder becuase the images have to be in the public folder if you link to them using JSON. I didn't realise this would be an issue until I started getting errors on Vercels. There is also certain code that you need to add to the vite.config.js file in order to deploy with Vercel (you may check the vite.config.js file in my repo if you are interested) but it ensures the deployment is successful. I also discovered that React websites on Vercel give 404 error when the website is refreshed even if you are using React Router and it works on your laptop. The solution to this is described in this stack overflow post and basically involves creating a vercel.json file on the root folder of your project containing the code snippet in the post: https://stackoverflow.com/questions/75963788/why-is-my-vercel-project-giving-me-an-error-404-on-refresh.
 
 One issue that I didn't address in this MVP is making sure the cart data persists across page reloads and route changes. A solution to this is to use Redux for state management or local storage in the web browser but since I haven’t studied these concepts yet, I didn’t feel comfortable implementing it for this project.
-
-•	When you’re deploying with Vercel – you need to add the following code to the vite.config.js file
-•	Vercel (with React) project gives 404 error when website is refreshed. I used this stack overflow post to troubleshoot: https://stackoverflow.com/questions/75963788/why-is-my-vercel-project-giving-me-an-error-404-on-refresh 
-![image](https://github.com/user-attachments/assets/053047b4-76af-43ac-be07-ebc3b6dae752)
-
 
 # Future Work Checklist
 - Add a database
