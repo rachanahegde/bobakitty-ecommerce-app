@@ -73,6 +73,8 @@ The website is designed to be responsive using Tailwind CSS 4. The text and imag
 ## Challenges
 I had a lot of issues deploying this website using Vercel. For instance, there were problems with my folder structure - the current structure is one that works and I had to check on Stack Overflow to figure out that some files were not in the correct places. I also had to make sure my image paths in JSON files weren't linking to images inside the src folder becuase the images have to be in the public folder if you link to them using JSON. I didn't realise this would be an issue until I started getting errors on Vercels. There is also certain code that you need to add to the vite.config.js file in order to deploy with Vercel (you may check the vite.config.js file in my repo if you are interested) but it ensures the deployment is successful. I also discovered that React websites on Vercel give 404 error when the website is refreshed even if you are using React Router and it works on your laptop. The solution to this is described in this stack overflow post and basically involves creating a vercel.json file on the root folder of your project containing the code snippet in the post: https://stackoverflow.com/questions/75963788/why-is-my-vercel-project-giving-me-an-error-404-on-refresh.
 
+There was also a learning curve with working with React and Tailwind of course. I had to look up syntax and code snippets constantly to figure out how to build the simplest version of this website. I also chose not to prioritise security/authentication because I haven't studied ways for implementing those things in depth yet. That will be a priority for me in the future when I add more functionality to this website. 
+
 One issue that I didn't address in this MVP is making sure the cart data persists across page reloads and route changes. A solution to this is to use Redux for state management or local storage in the web browser but since I haven’t studied these concepts yet, I didn’t feel comfortable implementing it for this project.
 
 # Future Work Checklist
@@ -81,9 +83,10 @@ One issue that I didn't address in this MVP is making sure the cart data persist
 - Add user account functionality with authentication
 
 # Resources
-•	ResponsivelyApp for making the website responsive across multiple screen sizes
-•	Javascript introduction and intermediate course on Codecademy
-•	React course on Codecademy
+- ResponsivelyApp for making the website responsive across multiple screen sizes
+- Javascript introduction and intermediate course on Codecademy
+- React course on Codecademy
+- React Router v6 course on Codecademy
 
 # Icons and images credit
 <div> Icons made by <a href="https://www.flaticon.com/authors/febrian-hidayat" title="Febrian Hidayat"> Febrian Hidayat </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div>
