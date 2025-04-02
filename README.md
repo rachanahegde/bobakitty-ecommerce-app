@@ -37,9 +37,23 @@ I built this eCommerce website for a cat café where people can spend time petti
 <img width="500" alt="desktop_checkout_4" src="https://github.com/user-attachments/assets/23686d77-0b4a-4a29-a570-91dd123d5dd8" />
 
 ## Tablet Screenshots
-
+<img width="500" src="https://github.com/user-attachments/assets/9b06d94c-960a-4d0e-9163-6a57995de014" />
+<img width="500" src="https://github.com/user-attachments/assets/c4c80403-ea28-4094-889b-23364edb9fba" />
+<img width="500" src="https://github.com/user-attachments/assets/352f8af6-b2ce-4a0b-823c-829d848539fd" />
+<img width="500" src="https://github.com/user-attachments/assets/10206b88-2848-4c70-a427-6b9da51d4e1b" />
 
 ## Mobile Screenshots
+<img width="400" src="https://github.com/user-attachments/assets/43e2d24a-b8c7-489d-ac1f-5215b1d6b63e" />
+![iphone_shop](https://github.com/user-attachments/assets/d4ec0bba-166d-416a-9396-6214a3088883)
+![iphone_home_page](https://github.com/user-attachments/assets/49c82da4-d32b-40a0-8b96-212938b69049)
+![iphone_drinks](https://github.com/user-attachments/assets/96ac4a46-ea45-4ae8-8cf4-23cca18abc25)
+![iphone_contact](https://github.com/user-attachments/assets/e9538282-d6d5-4e19-982b-269ea91854ad)
+
+![iphone_checkout_4](https://github.com/user-attachments/assets/93f15b86-5c7f-4e8d-880f-b84b8aa6e2bb)
+![iphone_checkout_3](https://github.com/user-attachments/assets/d65aa19f-0ba1-4b0e-9d1c-e8ea32e00b15)
+![iphone_checkout_2](https://github.com/user-attachments/assets/463c7fb5-c307-4708-be82-c48aa10c908a)
+![iphone_checkout_1](https://github.com/user-attachments/assets/ede54bdb-89c9-4b1e-9fee-4a850ef48840)
+
 
 # Process and Challenges
 # Design
