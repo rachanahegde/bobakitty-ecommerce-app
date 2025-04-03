@@ -12,7 +12,7 @@ I built this eCommerce website for a cat café where people can spend time petti
 <b> Note: A more detailed description of the content and functionality on each page is provided below in the process section. </b>
 - Responsive layout for mobile, tablet, desktop.
 - Shop page with product listings, shopping cart, and checkout process
-- Drinks menu page featuring different categories of drinks (i.e. milk tea, fruit tea, etc.)
+- Drinks menu page featuring different categories of drinks (i.e. milk tea, fruit tea, etc.). The drinks images are generated with ChatGPT and Dall E. 
 - Contact page
 - Home page with featured drinks, about section, and buttons linking to other important website pages
 
